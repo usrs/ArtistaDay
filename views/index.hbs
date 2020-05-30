@@ -1,0 +1,18 @@
+<h1>Artist A Day</h1>
+
+<form>
+  <div id="featured"></div>
+  <button id="cartBtn">Add to Cart</button>
+  <button id="wishBtn">Add to Wishlist</button>
+</form>
+
+<ol id="featured">
+  {{#each artists}}
+  <li>
+    {{this.title}}
+    <button class="view" data-id="{{this.id}}">X</button>
+  </li>
+  {{/each}}
+</ol>
+
+<script src="../public/assets/js/artist.js"></script>
