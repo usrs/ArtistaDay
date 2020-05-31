@@ -1,8 +1,8 @@
 {
   "name": "ArtistaDay",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "------------------------------------------------------\r ArtistADay provides a curated shopping experience by featuring one independent artist a day in a timed sales event.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/usrs/ArtistaDay#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^4.0.4"
+    "express-handlebars": "^4.0.4",
+    "mysql2": "^2.1.0"
   }
 }
