@@ -19,6 +19,7 @@
   "homepage": "https://github.com/usrs/ArtistaDay#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "chocolat": "^1.0.1",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
     "materialize-css": "^1.0.0-rc.2"
