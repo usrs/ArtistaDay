@@ -15,7 +15,6 @@
   left: 100px;
 }
 
-
 .artist-bio {
   position: absolute;
   bottom: 20px;
@@ -24,18 +23,21 @@
 
 .artist-bio-background {
   background-color: gray;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
   opacity: 0.5;
   height: 100%;
   width: 100%;
   padding: 20px;
   bottom: 100px;
-  
 }
 
 .artist-bio-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  position: absolute;
+  bottom: 60px;
+  right: 50px;
   z-index: 10;
   color: black;
 }
