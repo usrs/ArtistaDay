@@ -1,0 +1,53 @@
+.banner {
+  background-image: url("../assets/Annie_Leibovitz/Images/AL-header.jpg");
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  clear: both;
+  float: initial;
+}
+
+/* Bottom right text */
+
+.artist-name {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+}
+
+
+.artist-bio {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.artist-bio-background {
+  background-color: gray;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  bottom: 100px;
+  
+}
+
+.artist-bio-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .banner {
+    height: 100px;
+  }
+}
