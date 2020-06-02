@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Artist } = require('../controller')
+const { Artist, Item, Event, Usercart } = require('../controller')
 
 router.get('/', (req, res) => {
   res.render('index', {
@@ -16,4 +16,23 @@ router.get('/artists', (req, res) => {
     res.render('artists', { artists })
   })
 })
+
+router.get('/items', (req, res) => {
+  Item.getItems(items => {
+    res.render('items', { items })
+  })
+})
+
+router.get('/events', (req, res) => {
+  Event.getEvents(events => {
+    res.render('events', { events })
+  })
+})
+
+router.get('/usercarts', (req, res) => {
+  Usercart.getUsercarts(usercarts => {
+    res.render('usercarts', { usercarts })
+  })
+})
+
 module.exports = router

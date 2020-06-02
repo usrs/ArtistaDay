@@ -3,6 +3,8 @@
       <a href="#!" class="brand-logo center">ARTIST A DAY</a>
       <ul class="right hide-on-med-and-down">
         <li class="active"><a href="collapsible.html">Products</a></li>
+        <li><a href="#">Artist Sign In</a></li>
+        <li><a href="#">Customer Sign In</a></li>
         <li><a href="#">Checkout</a></li>
       </ul>
     </div>
@@ -12,86 +14,96 @@
   <div class="container">
     <div class="divider"></div>
     <div class="section">
-      <div class="responsive-img" id="featured">
-        <img
-          src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-RpBWHgYg6zI%2FTlgLMhnobJI%2FAAAAAAAAA1A%2F1b4vuRM3TgQ%2Fs1600%2FAfter%2Bthe%2BProm%2B-%2BNorman%2BRockwell%2B-%2B1957.jpg&f=1&nofb=1"
-          alt="Norman Rockwell painting">
+      <div class="responsive-img hoverable" id="featured">
+        {{#each artist.item}}
+        <img src="{{this.dataValues.url}}" 
+        title="{{this.dataValues.title}}">
         <div class="right" id="artistName">
-          <p>Artist Name</p>
-          <p>Ends in: 00:12:36</p>
+          <p>Artist Name: {{this.dataValues.artistName}}</p>
+          {{/each}}
+
+          {{#each event}}
+          <p>Sale:{{this.dataValues.endDate}}</p>
+          {{/each}}
+          
+          {{#each artist.item}}
+          <a class="chocolat-image" href="{{this.dataValues.url}}" title="{{this.dataValues.title}}"></a>
         </div>
+        {{/each}}
       </div>
     </div>
+
     <div class="divider"></div>
     <div class="section">
       <h3>Recently Featured Artists</h3>
-
       <div class="row">
-
+        {{#each artist.item}}
         <div class="col s3">
-          <div class="card">
-            <div class="card-image">
+          <div class="card hoverable">
+            <div class="card-image">  
               <img
-                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-3FfL1hXUBG8%2FT2_ywqLBM2I%2FAAAAAAAAAfA%2FXaLlR_tcPyQ%2Fs1600%2F21810896_1207061229_1193223487_leonid_afremov_31.jpg&f=1&nofb=1"
-                alt="colorful painting">
-              <span class="card-title">Artwork Title</span>
+                src="{{this.dataValues.url}}"
+                title="{{this.dataValues.title}}">
+              <span class="card-title">Artwork Title:{{this.dataValues.title}}</span>
             </div>
             <div class="card-content">
-              <p>Artist Name</p>
+              <p>Artist Name: {{this.dataValues.artistName}}</p>
             </div>
             <div class="card-action">
-              <a href="#">Link to artwork</a>
+              <a class="chocolat-image" href="{{this.dataValues.url}}" title="{{this.dataValues.title}}"></a>
             </div>
           </div>
         </div>
         <div class="col s3">
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Mona_Lisa_%28copy%2C_Walters_Art_Gallery%29.JPG/220px-Mona_Lisa_%28copy%2C_Walters_Art_Gallery%29.JPG"
-                alt="Mona Lisa">
-              <span class="card-title">Artwork Title</span>
+                src="{{this.dataValues.url}}"
+                title="{{this.dataValues.title}}">
+              <span class="card-title">Artwork Title:{{this.dataValues.title}}</span>
             </div>
             <div class="card-content">
-              <p>Artist Name</p>
+              <p>Artist Name:{{this.dataValues.artistName}}</p>
             </div>
             <div class="card-action">
-              <a href="#">Link to artwork</a>
+              <a class="chocolat-image" href="{{this.dataValues.url}}" title="{{this.dataValues.title}}"></a>
             </div>
           </div>
         </div>
         <div class="col s3">
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image">
               <img
-                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fanseladams.com%2Fwp-content%2Fuploads%2F2016%2F02%2Fimg08.jpg&f=1&nofb=1"
-                alt="Ansel Adams">
-              <span class="card-title">Artwork Title</span>
+                src="{{this.dataValues.url}}"
+                title="{{this.dataValues.title}}">
+              <span class="card-title">Artwork Title: {{this.dataValues.title}}</span>
             </div>
             <div class="card-content">
-              <p>Artist Name</p>
+              <p>Artist Name: {{this.dataValues.artistName}}</p>
             </div>
             <div class="card-action">
-              <a href="#">Link to artwork</a>
+              <a class="chocolat-image" href="{{this.dataValues.url}}" title="{{this.dataValues.title}}"></a>
             </div>
           </div>
         </div>
         <div class="col s3">
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image">
+              <a class="chocolat-image" href="{{this.dataValues.url}}" title="{{this.dataValues.title}}"></a>
               <img
-                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.arteestdefamo.com%2Fimages%2Fstarry-night.gif&f=1&nofb=1"
-                alt="starry night">
-              <span class="card-title">Artwork Title</span>
+                src="{{this.dataValues.url}}"
+                title="{{this.dataValues.title}}">
+              <span class="card-title">Artwork Title: {{this.dataValues.title}}</span>
             </div>
             <div class="card-content">
-              <p>Artist Name</p>
+              <p>Artist Name: {{this.dataValues.artistName}}</p>
             </div>
             <div class="card-action">
-              <a href="#">Link to artwork</a>
+              <a class="chocolat-image" href="{{this.dataValues.url}}" title="{{this.dataValues.title}}"></a>
             </div>
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
   </div>
