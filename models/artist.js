@@ -12,25 +12,9 @@ Artist.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  artistId: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  item1: {
+  artistPhoto: {
     type: DataTypes.STRING,
-    allowNull: false
-  },
-  item2: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  item3: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  item4: {
-    type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   }
 }, { sequelize, modelName: 'artist' })
 
