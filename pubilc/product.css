@@ -1,5 +1,14 @@
+.myNav {
+  background-color: #29b6f6;
+}
+
 .featured-description-box {
   padding: 10px;
   outline-style: solid;
   outline-width: thin;
+}
+
+.product-footer {
+  background-color: #29b6f6;
+  padding-bottom: 20px;
 }
