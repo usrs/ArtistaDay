@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Artist, Item, Event, Usercart } = require('../controller')
+const { Artist, Item, Event, Usercart } = require('../controllers')
 
 router.get('/', (req, res) => {
   res.render('index', {
