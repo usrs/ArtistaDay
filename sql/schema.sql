@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS artists_db;
+DROP DATABASE IF EXISTS artistaday_db;
 
-CREATE DATABASE artists_db;
+CREATE DATABASE artistaday_db;
 
-USE artists_db;
+USE artistaday_db;
 
 CREATE TABLE artists (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
