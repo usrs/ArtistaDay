@@ -7,11 +7,11 @@ router.get('/items', (req, res) => Item
 
 // GET one item
 router.get('/items/:id', (req, res) => Item
-  .getItemsWhere({ id: req.params.id }, game => res.json(item)))
+  .getItemsWhere({ id: req.params.id }, item => res.json(item)))
 
 // POST one item
 router.post('/items', (req, res) => Item
-  .addItem(req.body, info => res.json(info)))
+  .addItem(req.body, info => res.sendStatus(200)))
 
 // PUT one item
 router.put('/items/:id', (req, res) => Item

@@ -7,11 +7,11 @@ router.get('/usercarts', (req, res) => Usercart
 
 // GET one usercart
 router.get('/usercarts/:id', (req, res) => Usercart
-  .getUsercartsWhere({ id: req.params.id }, game => res.json(usercart)))
+  .getUsercartsWhere({ id: req.params.id }, usercart => res.json(usercart)))
 
 // POST one usercart
 router.post('/usercarts', (req, res) => Usercart
-  .addUsercart(req.body, info => res.json(info)))
+  .addUsercart(req.body, info => res.sendStatus(200)))
 
 // PUT one usercart
 router.put('/usercarts/:id', (req, res) => Usercart

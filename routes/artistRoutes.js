@@ -7,11 +7,11 @@ router.get('/artists', (req, res) => Artist
 
 // GET one artist
 router.get('/artists/:id', (req, res) => Artist
-  .getArtistsWhere({ id: req.params.id }, game => res.json(artist)))
+  .getArtistsWhere({ id: req.params.id }, artist => res.json(artist)))
 
 // POST one artist
 router.post('/artists', (req, res) => Artist
-  .addArtist(req.body, info => res.json(info)))
+  .addArtist(req.body, info => res.sendStatus(200)))
 
 // PUT one artist
 router.put('/artists/:id', (req, res) => Artist

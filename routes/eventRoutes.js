@@ -7,11 +7,11 @@ router.get('/events', (req, res) => Event
 
 // GET one event
 router.get('/events/:id', (req, res) => Event
-  .getEventsWhere({ id: req.params.id }, game => res.json(event)))
+  .getEventsWhere({ id: req.params.id }, event => res.json(event)))
 
 // POST one event
 router.post('/events', (req, res) => Event
-  .addEvent(req.body, info => res.json(info)))
+  .addEvent(req.body, info => res.sendStatus(200)))
 
 // PUT one event
 router.put('/events/:id', (req, res) => Event
