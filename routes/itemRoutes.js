@@ -2,23 +2,29 @@ const router = require('express').Router()
 const { Item } = require('../controllers')
 
 // GET all items
-router.get('/items', (req, res) => Item
-  .getItems(items => res.json(items)))
-
+router.get('/items', (req, res) =>
+{
+  Item.getItems(items => res.json(items))
+})
 // GET one item
-router.get('/items/:id', (req, res) => Item
-  .getItemsWhere({ id: req.params.id }, game => res.json(item)))
-
+router.get('/items/:id', (req, res) =>
+{
+  Item.getItemsWhere({ id: req.params.id }, game => res.json(item))
+})
 // POST one item
-router.post('/items', (req, res) => Item
-  .addItem(req.body, info => res.json(info)))
-
-// PUT one item
-router.put('/items/:id', (req, res) => Item
-  .updateItem(req.body, { id: req.params.id }, info => res.json(info)))
-
+router.post('/items', (req, res) =>
+{
+  Item.addItem(req.body, info => res.json(info))
+})
+ one item
+router.put('/items/:id', (req, res) =>
+{
+  Item.updateItem(req.body, { id: req.params.id }, info => res.json(info))
+})
 // DELETE one item
-router.delete('/items/:id', (req, res) => Item
-  .deleteItem({ id: req.params.id }, info => res.json(info)))
+router.delete('/items/:id', (req, res) =>
+{
+  Item.deleteItem({ id: req.params.id }, info => res.json(info))
+})
 
 module.exports = router
