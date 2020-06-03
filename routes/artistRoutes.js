@@ -23,7 +23,7 @@ router.put('/artists/:id', (req, res) => {
 
 // DELETE one artist
 router.delete('/artists/:id', (req, res) => {
-  Artist.deleteArtist({ id: req.params.id }, info => res.json(info))
+  Artist.deleteArtist({ id: req.params.id }, info => res.sendStatus(200))
 })
 
 module.exports = router

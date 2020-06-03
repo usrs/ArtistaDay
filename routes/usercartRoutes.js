@@ -23,7 +23,7 @@ router.put('/usercarts/:id', (req, res) => {
 
 // DELETE one usercart
 router.delete('/usercarts/:id', (req, res) => {
-  Usercart.deleteUsercart({ id: req.params.id }, info => res.json(info))
+  Usercart.deleteUsercart({ id: req.params.id }, info => res.sendStatus(200))
 })
 
 module.exports = router

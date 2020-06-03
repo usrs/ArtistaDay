@@ -23,7 +23,7 @@ router.put('/events/:id', (req, res) => {
 
 // DELETE one event
 router.delete('/events/:id', (req, res) => {
-  Event.deleteEvent({ id: req.params.id }, info => res.json(info))
+  Event.deleteEvent({ id: req.params.id }, info => res.sendStatus(200))
 })
 
 module.exports = router

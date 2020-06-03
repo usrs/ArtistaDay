@@ -23,7 +23,7 @@ router.put('/items/:id', (req, res) => {
 
 // DELETE one item
 router.delete('/items/:id', (req, res) => {
-  Item.deleteItem({ id: req.params.id }, info => res.json(info))
+  Item.deleteItem({ id: req.params.id }, info => res.sendStatus(200))
 })
 
 module.exports = router

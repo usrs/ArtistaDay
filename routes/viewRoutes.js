@@ -2,13 +2,15 @@ const router = require('express').Router()
 const { Artist, Item, Event, Usercart } = require('../controllers')
 
 router.get('/', (req, res) => {
-  res.render('index', {
-    startDate: '2020-07-12 00:00:00',
-    endDate: '2020-07-12 11:59:59',
-    title: 'ArtistADay',
-    artistId: 1,
-    discount: 40
-  })
+  res.render('home')
+})
+
+router.get('artists/:id', (req, res) => {
+  Artist.getArtistsWhere({ id: req.params.id, include: [Item] })
+    .then(artist => {
+      res.render('artists', { artist: artist.dataValues })
+    })
+    .catch(err => console.error(err))
 })
 
 router.get('/artists', (req, res) => {
