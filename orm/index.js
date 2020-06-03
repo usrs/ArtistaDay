@@ -14,7 +14,7 @@ module.exports = {
     })
   },
   createOne(table, data, cb) {
-    db.query(`INSERT INTO ${table} SET ?`, data, (err, info) => {
+    db.query(`INSERT INTO ${table} ?`, data, (err, info) => {
       if (err) { console.log(err) }
       cb(info)
     })
