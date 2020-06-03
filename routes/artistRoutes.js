@@ -1,10 +1,6 @@
 const router = require('express').Router()
 const { Artist } = require('../controllers')
 
-router.get('/artists/:id', (req, res) => {
-  Artist.getArtistsWhere({ id: req.params.id }, game => res.json(artist))
-})
-
 // GET all artists
 router.get('/artists', (req, res) => {
   Artist.getArtists(artists => res.json(artists))
