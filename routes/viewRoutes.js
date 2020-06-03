@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Artist, Item, Event, Usercart } = require('../controllers')
+const { Artist, Item, Event, Usercart } = require('../models')
 
 router.get('/', (req, res) => {
   res.render('home')

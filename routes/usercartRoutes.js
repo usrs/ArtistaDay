@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Usercart } = require('../controllers')
+const { Usercart } = require('../models')
 
 // GET all usercarts
 router.get('/usercarts', (req, res) => {

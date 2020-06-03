@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Event } = require('../controllers')
+const { Event } = require('../models')
 
 // GET all events
 router.get('/events', (req, res) => {

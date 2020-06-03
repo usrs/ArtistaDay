@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Item } = require('../controllers')
+const { Item } = require('../models')
 
 // GET all items
 router.get('/items', (req, res) => {
