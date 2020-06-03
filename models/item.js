@@ -8,6 +8,10 @@ Item.init({
     type: DataTypes.STRING,
     allowNull: false
   },
+  url: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
   category: {
     type: DataTypes.STRING,
     allowNull: false
