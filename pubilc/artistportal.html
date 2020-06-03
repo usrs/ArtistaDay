@@ -36,7 +36,7 @@
       <div class="col s 10">
         <h1>Add New Artwork</h1>
         
-        <!-- <form action=" " enctype="multipart/form-data" method="post">
+        <form action=" " method="post">
           <p>
             Title of Artwork:<br>
             <input type="text" name="textline" size="30">
@@ -48,10 +48,10 @@
           <div>
             <input type="submit" value="Send">
           </div>
-        </form> -->
+        </form>
 
 
-        <form id="artistForm" action="" enctype="multipart/form-data" method="post">
+        <form id="artistForm" action=""  method="post">
          
             <label for="artwork-title">Artwork Title:</label>
             <input type="text" name="artwork-title" id="artwork-title">
@@ -75,16 +75,18 @@ Please specify a file, or a set of files:<br>
 </div>
 </form> -->
   
-    <!-- <form action=""  method="post" class="artist-form" id="artistForm"> 
+    <form action=""  method="post" class="artist-form" id="artistForm"> 
       <input type="file" name="datafile" size="40"><br>
       <p>
         <label for="awtitle">Artwork Title:</label><br>
       </p>
       <input type="text" id="fname" name="fname"><br>
       <div>
-        <input type="submit" value="Send">
+        <label for="file-upload">Please select a file-upload</label>
+        <input type="file" name="file" id="file">
+        <!-- <input type="submit" value="Send"> -->
       </div>
-    </form> -->
+    </form>
 
 </div>
 </main>

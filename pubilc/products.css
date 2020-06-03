@@ -40,7 +40,6 @@
   width: 500px;
   padding: 20px;
   z-index: inherit;
-  
   /* display: block;
     bottom: 4px;
     background: rgba(0, 0, 0, 0.4);
@@ -55,7 +54,6 @@
   /* bottom: 60px;
   right: 30px; */
   z-index: inherit;
-  
   color: white;
 }
 
@@ -75,10 +73,61 @@
   text-align: left;
 }
 
-/* 
+.card.medium {
+  height: 500px;
+}
+
+.card .card-action {
+  background-color: inherit;
+  border-top: 1px solid rgba(160, 160, 160, 0.2);
+  position: relative;
+  padding: 16px 24px;
+}
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.card .card-image .card-title {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  padding: 24px;
+}
+
+.card .card-content {
+  padding: 24px;
+  border-radius: 0 0 2px 2px;
+}
+
+.card .card-content p {
+  margin: 0;
+}
+
+.card .card-content .card-title {
+  display: block;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.card .card-content .card-title i {
+  line-height: 32px;
+}
+
 .addBtn {
-  background-color: #29b6f6;
-} */
+  position: absolute;
+  top: 25px;
+  right: 30px;
+}
 
 .product-footer {
   background-color: #29b6f6;
