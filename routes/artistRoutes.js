@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Artist } = require('../controllers')
+const { Artist } = require('../models')
 
 // GET all artists
 router.get('/artists', (req, res) =>
