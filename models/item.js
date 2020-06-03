@@ -15,7 +15,7 @@ Item.init({
   price: {
     type: DataTypes.INTEGER,
     allowNull: false
-  }
+  },
   eventId: {
     type: DataTypes.INTEGER,
     allowNull: false

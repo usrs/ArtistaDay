@@ -15,7 +15,7 @@ Usercart.init({
   discount: {
     type: DataTypes.INTEGER,
     allowNull: false
-  }
+  },
   eventId: {
     type: DataTypes.INTEGER,
     allowNull: false
