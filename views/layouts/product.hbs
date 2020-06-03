@@ -21,18 +21,18 @@
 <main>
   <div class="row">
     <div class="col s6 featured-product-image">
-      <a class="chocolat-image" href="img/a.jpg" title="image caption a">Featured Product Image</a>
+      <a class="chocolat-image" href="" title="{{this.dataValues.title}}">Featured Product Image</a>
     </div>
 
     <div class="col s6">
-      <h3 class="featured-work-title">Artwork Title</h3>
-      <h4 class="featured-work-artist">Artist Name</h4>
+      <h3 class="featured-work-title">Artwork Title:{{this.dataValues.title}}</h3>
+      <h4 class="featured-work-artist">Artist Name: {{this.dataValues.artistName}}</h4>
       <p class=timer>Ends in 5 hours</p>
       <div class="featured-description-box">
         <h5>THE ARTIST</h5>
-        <p>Artist Bio</p>
+        <p>Artist Bio:{{this.dataValues.artistBio}}</p>
         <h5>THE ARTWORK</h5>
-        <p>Artwork Description</p>
+        <p>Artwork Description: </p>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
       <div class="col s4">
         <div class="small card">
           <div class="card-image">
-            <img src="../assets/Annie_Leibovitz/Images/R2-D2_London_2002.jpg">
+            <img src="{{this.dataValues.url}}">
             <!-- <span class="card-title">Card Title</span> -->
           </div>
           <div class="card-content">
@@ -61,7 +61,7 @@
         <div class="small card">
           <div class="card-image">
             <img
-              src="../assets/Annie_Leibovitz/Images/John_Lennon_and_Yoko Ono,_The Dakota,_New_York,_December_8,_1980.jpg">
+              src="{{this.dataValues.url}}>
             <!-- <span class="card-title">Card Title</span> -->
           </div>
           <div class="card-content">
@@ -76,7 +76,7 @@
       <div class="col s4">
         <div class="small card">
           <div class="card-image">
-            <img src="../assets/Annie_Leibovitz/Images/Queen_Elizabeth_II_Buckingham Palace_London_2007.jpg">
+            <img src="{{this.dataValues.url}}">
             <!-- <span class="card-title">Card Title</span> -->
           </div>
           <div class="card-content">
