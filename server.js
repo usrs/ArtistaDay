@@ -12,5 +12,8 @@ app.set('view engine', '.hbs')
 
 app.use(require('./routes'))
 
+app.get('/', function (req, res) {
+  res.render('home')
+})
 
 app.listen(process.env.PORT, () => console.log('http://localhost:3000'))
