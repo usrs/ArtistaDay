@@ -36,7 +36,7 @@
       <div class="col s 10">
         <h1>Add New Artwork</h1>
         
-        <form action=" " enctype="multipart/form-data" method="post">
+        <!-- <form action=" " enctype="multipart/form-data" method="post">
           <p>
             Title of Artwork:<br>
             <input type="text" name="textline" size="30">
@@ -48,7 +48,18 @@
           <div>
             <input type="submit" value="Send">
           </div>
+        </form> -->
+
+
+        <form id="artistForm" action="" enctype="multipart/form-data" method="post">
+         
+            <label for="artwork-title">Artwork Title:</label>
+            <input type="text" name="artwork-title" id="artwork-title">
+           <label for="file-upload">Please select a file-upload</label>
+           <input type="file" name="file" id="file">
+        <a class="waves-effect waves-light btn-small addBtn" type="submit">Submit</a>
         </form>
+
          <!-- <form action="http://jkorpela.fi/cgi-bin/echo.cgi"
 enctype="multipart/form-data" method="post">
 <p>
