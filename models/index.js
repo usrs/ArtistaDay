@@ -1,6 +1,6 @@
-const Artist = require('./artist.js')
-const Event = require('./event.js')
-const Item = require('./item.js')
+const Artist = require('./Artist.js')
+const Event = require('./Event.js')
+const Item = require('./Item.js')
 
 Artist.hasMany(Event, Item)
 Event.hasMany(Item)
