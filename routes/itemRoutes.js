@@ -3,27 +3,37 @@ const { Item } = require('../models')
 
 // GET all items
 router.get('/items', (req, res) => {
-  Item.getItems(items => res.json(items))
+  Item.findAll()
+  .then(items => res.json(items))
+  .catch(err => console.error(err))
 })
 
 // GET one item
 router.get('/items/:id', (req, res) => {
-  Item.getItemsWhere({ id: req.params.id }, item => res.json(item))
+  Item.findOne({ id: req.params.id })
+  .then(item => res.json(item))
+  .catch(err => console.error(err))
 })
 
 // POST one item
 router.post('/items', (req, res) => {
-  Item.addItem(req.body, info => res.sendStatus(200))
+  Item.create(req.body)
+  .then(() => res.sendStatus(200))
+  .catch(err => console.error(err))
 })
 
 // PUT one item
 router.put('/items/:id', (req, res) => {
-  Item.updateItem(req.body, { id: req.params.id }, info => res.json(info))
+  Item.update(req.body, { where: { id: req.params.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 // DELETE one item
 router.delete('/items/:id', (req, res) => {
-  Item.deleteItem({ id: req.params.id }, info => res.sendStatus(200))
+  Item.destroy({ where: { id: req.params.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 module.exports = router

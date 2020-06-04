@@ -3,27 +3,37 @@ const { Event } = require('../models')
 
 // GET all events
 router.get('/events', (req, res) => {
-  Event.getEvents(events => res.json(events))
+  Event.findAll()
+    .then(events => res.json(events))
+    .catch(err => console.error(err))
 })
 
 // GET one event
 router.get('/events/:id', (req, res) => {
-  Event.getEventsWhere({ id: req.params.id }, event => res.json(event))
+  Event.findOne({ id: req.params.id })
+    .then(event => res.json(event))
+    .catch(err => console.error(err))
 })
 
 // POST one event
 router.post('/events', (req, res) => {
-  Event.addEvent(req.body, info => res.sendStatus(200))
+  Event.create(req.body)
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 // PUT one event
 router.put('/events/:id', (req, res) => {
-  Event.updateEvent(req.body, { id: req.params.id }, info => res.json(info))
+  Event.update(req.body, { where: { id: req.params.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 // DELETE one event
 router.delete('/events/:id', (req, res) => {
-  Event.deleteEvent({ id: req.params.id }, info => res.sendStatus(200))
+  Event.destroy({ where: { id: req.params.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 module.exports = router
