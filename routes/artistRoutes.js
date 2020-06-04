@@ -3,27 +3,37 @@ const { Artist } = require('../models')
 
 // GET all artists
 router.get('/artists', (req, res) => {
-  Artist.getArtists(artists => res.json(artists))
+  Artist.findAll()
+    .then(artists => res.json(artists))
+    .catch(err => console.error(err))
 })
 
 // GET one artist
 router.get('/artists/:id', (req, res) => {
-  Artist.getArtistsWhere({ id: req.params.id }, artist => res.json(artist))
+  Artist.findOne({ id: req.params.id })
+    .then(artist => res.json(artist))
+    .catch(err => console.error(err))
 })
 
 // POST one artist
 router.post('/artists', (req, res) => {
-  Artist.addArtist(req.body, info => res.sendStatus(200))
+  Artist.create(req.body)
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 // PUT one artist
 router.put('/artists/:id', (req, res) => {
-  Artist.updateArtist(req.body, { id: req.params.id }, info => res.json(info))
+  Artist.update(req.body, { where: { id: req.params.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 // DELETE one artist
 router.delete('/artists/:id', (req, res) => {
-  Artist.deleteArtist({ id: req.params.id }, info => res.sendStatus(200))
+  Artist.destroy({ where: { id: req.params.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.error(err))
 })
 
 module.exports = router
