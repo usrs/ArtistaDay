@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomePage</title>
+  <link rel="stylesheet" href="dist/css/chocolat.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="../dist/css/chocolat.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #nameBox {
+      position: absolute;
+      z-index: 1;
+      opacity: 0.5;
+      background-color: gray;
+      bottom: -325px;
+      right: 10px;
+      height: 100px;
+      width: 300px;
+      margin-right: 250px;
+    }
+
+    #artistName {
+      font-size: 20px;
+    }
+
+    .chocLink {
+      float: left;
+      font-size: 20px;
+      background-color: black;
+      padding: 10px;
+    }
+
+    .prodLink {
+      float: right;
+      font-size: 20px;
+      background-color: aquamarine;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center">ARTIST A DAY</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Events</a></li>
+        <li><a href="collapsible.html">Products</a></li>
+        <li><a href="#">Artist Portal</a></li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+
+    <h2 class="center-align">Today's Featured Artist</h2>
+    <div class="divider"></div>
+
+    <div class="section">
+      <div class="responsive-img hoverable" id="featured">
+        <img src="../../assets/Henri Matisse/Images/Femme_au_chapeau_1905.jpg" alt="Femme au chapeau 1905">
+        <div class="right container" id="nameBox">
+          <p id="artistName">Artist Name</p>
+          <p>Ends in: 00:12:36</p>
+        </div>
+      </div>
+      <a class="chocolat-image chocLink" href="../../assets/Henri Matisse/Images/Femme_au_chapeau_1905.jpg">Lightbox
+        Preview</a>
+      <a href="#" class="prodLink">Visit product page</a>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section">
+      <h3>Recently Featured Artists</h3>
+
+      <div class="row">
+
+        <div class="col s3">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img
+                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-3FfL1hXUBG8%2FT2_ywqLBM2I%2FAAAAAAAAAfA%2FXaLlR_tcPyQ%2Fs1600%2F21810896_1207061229_1193223487_leonid_afremov_31.jpg&f=1&nofb=1"
+                alt="colorful painting">
+              <span class="card-title">Artwork Title</span>
+            </div>
+            <div class="card-content">
+              <p>Artist Name</p>
+            </div>
+            <div class="card-action">
+              <a class="chocolat-image"
+                href="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F1.bp.blogspot.com%2F-3FfL1hXUBG8%2FT2_ywqLBM2I%2FAAAAAAAAAfA%2FXaLlR_tcPyQ%2Fs1600%2F21810896_1207061229_1193223487_leonid_afremov_31.jpg&f=1&nofb=1"
+                title="title">Link to Artwork</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Mona_Lisa_%28copy%2C_Walters_Art_Gallery%29.JPG/220px-Mona_Lisa_%28copy%2C_Walters_Art_Gallery%29.JPG"
+                alt="Mona Lisa">
+              <span class="card-title">Artwork Title</span>
+            </div>
+            <div class="card-content">
+              <p>Artist Name</p>
+            </div>
+            <div class="card-action">
+              <a class="chocolat-image"
+                href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Mona_Lisa_%28copy%2C_Walters_Art_Gallery%29.JPG/220px-Mona_Lisa_%28copy%2C_Walters_Art_Gallery%29.JPG"
+                title="title">Link to Artwork</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img
+                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fanseladams.com%2Fwp-content%2Fuploads%2F2016%2F02%2Fimg08.jpg&f=1&nofb=1"
+                alt="Ansel Adams">
+              <span class="card-title">Artwork Title</span>
+            </div>
+            <div class="card-content">
+              <p>Artist Name</p>
+            </div>
+            <div class="card-action">
+              <a class="chocolat-image"
+                href="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fanseladams.com%2Fwp-content%2Fuploads%2F2016%2F02%2Fimg08.jpg&f=1&nofb=1"
+                title="title">Link to Artwork</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s3">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img
+                src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.arteestdefamo.com%2Fimages%2Fstarry-night.gif&f=1&nofb=1"
+                alt="starry night">
+              <span class="card-title">Artwork Title</span>
+            </div>
+            <div class="card-content">
+              <p>Artist Name</p>
+            </div>
+            <div class="card-action">
+              <a class="chocolat-image"
+                href="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.arteestdefamo.com%2Fimages%2Fstarry-night.gif&f=1&nofb=1"
+                title="title">Link to Artwork</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer product-footer">
+    <div class="container">
+      <div class="row">
+        © 2020 Copyright ArtistaDay
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script type="text/javascript" src="dist/js/chocolat.js"></script>
+</body>
+
+</html>
