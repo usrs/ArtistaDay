@@ -9,11 +9,11 @@ Artist.init({
     allowNull: false
   },
   bio: {
-    type: DataTypes.STRING,
+    type: DataTypes.BLOB,
     allowNull: false
   },
   artistPhoto: {
-    type: DataTypes.STRING,
+    type: DataTypes.BLOB,
     allowNull: true
   }
 }, { sequelize, modelName: 'artist' })

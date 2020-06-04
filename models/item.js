@@ -9,11 +9,11 @@ Item.init({
     allowNull: false
   },
   productUrl: {
-    type: DataTypes.STRING,
+    type: DataTypes.BLOB,
     allowNull: false
   },
   artistUrl: {
-    type: DataTypes.STRING,
+    type: DataTypes.BLOB,
     allowNull: false
   },
   category: {
