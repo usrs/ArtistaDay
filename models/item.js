@@ -12,10 +12,6 @@ Item.init({
     type: DataTypes.TEXT,
     allowNull: false
   },
-  artistUrl: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
   category: {
     type: DataTypes.STRING,
     allowNull: false
