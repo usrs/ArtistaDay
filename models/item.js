@@ -4,11 +4,15 @@ const sequelize = require('../db')
 class Item extends Model { }
 
 Item.init({
-  name: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  url: {
+  productUrl: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  artistUrl: {
     type: DataTypes.STRING,
     allowNull: false
   },

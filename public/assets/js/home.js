@@ -1,7 +1,3 @@
-document.querySelector('chocolat-image').addEventListener('click', () => {
-  api.open()
-})
-
 const getArtwork = () => {
   axios.get(`/api/items/:${id}`)
     .then(({ data }) => {
@@ -11,7 +7,7 @@ const getArtwork = () => {
       <div class="right" id="nameBox">
           <p id="artistName">${item.artistName}
           </p>
-          <p>Sale: ${event.endDate}</p>
+          <p>Sale: ends July 8, 2020</p>
         </div>
       </div>
           <a class="chocolat-image" href="${item.productUrl}">Lightbox Preview</a>
