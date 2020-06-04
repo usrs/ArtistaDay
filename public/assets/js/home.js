@@ -19,3 +19,5 @@ const getArtwork = () => {
     })
     .catch(err => console.error(err))
 }
+
+getArtwork()
