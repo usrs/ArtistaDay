@@ -24,6 +24,10 @@ Item.init({
     type: DataTypes.INTEGER,
     allowNull: false
   },
+  artistId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
   eventId: {
     type: DataTypes.INTEGER,
     allowNull: false
