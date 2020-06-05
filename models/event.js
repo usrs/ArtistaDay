@@ -14,7 +14,7 @@ Event.init({
   },
   title: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   artistId: {
     type: DataTypes.INTEGER,

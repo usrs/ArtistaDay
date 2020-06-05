@@ -1,18 +1,22 @@
-const getArtwork = () => {
-  axios.get(`/api/items/:${id}`)
-    .then(({ data }) => {
-      document.getElementById('featured').innerHTML = `
-      <img src="${data.productUrl}" 
-      alt="${data.title}">
-      <div class="right" id="nameBox">
-          <p id="artistName">${data.artistName}
-          </p>
-          <p>Sale: ends July 8, 2020</p>
-        </div>
-      </div>
-          <a href="${data.productUrl}" id="link">Visit product page</a>`
-    })
-    .catch(err => console.error(err))
+const goToProductPage = (id) => {
+  return axios.get(`/api/items/:${id}`)
 }
 
-getArtwork()
+goToProductPage()
+
+// function to load the featured artist of the day
+function loadFeatured () {
+  const artistArray = [
+    { "Annie Leibovitz": ["Queen Elizabeth", "Rolling Stones"] }, { "Sebastio Salgado": ["elephant", "baobao tree"] }, { "Henri Matisse": ["Femme Au Chapeau", "Blue Nude"] }]
+  const featuredArtist = artistArray[Math.floor(Math.random() * artistArray.length)]
+  const displayedArtwork = imageArray[Math.floor(Math.random() * imageArray.length)]
+}
+
+// function to load recent artist cards
+function loadRecent (id) {
+
+}
+
+loadFeatured()
+
+loadRecent()

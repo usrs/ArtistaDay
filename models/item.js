@@ -18,7 +18,7 @@ Item.init({
   },
   price: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   },
   artistId: {
     type: DataTypes.INTEGER,
@@ -26,7 +26,7 @@ Item.init({
   },
   eventId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   }
 }, { sequelize, modelName: 'item' })
 
