@@ -1,12 +1,12 @@
 const router = require('express').Router()
-const { Artist, Item, Event, Usercart } = require('../models')
+const { Artist, Item, Event } = require('../models')
 
 router.get('/', (req, res) => {
   res.render('home')
 })
 
 router.get('artists/:id', (req, res) => {
-  Artist.getArtistsWhere({ id: req.params.id, include: [Item] })
+  Artist.findOne({ id: req.params.id, include: [Item] })
     .then(artist => {
       res.render('artists', { artist: artist.dataValues })
     })
@@ -14,26 +14,20 @@ router.get('artists/:id', (req, res) => {
 })
 
 router.get('/artists', (req, res) => {
-  Artist.getArtists(artists => {
+  Artist.findAll(artists => {
     res.render('artists', { artists })
   })
 })
 
 router.get('/items', (req, res) => {
-  Item.getItems(items => {
+  Item.findAll(items => {
     res.render('items', { items })
   })
 })
 
 router.get('/events', (req, res) => {
   Event.getEvents(events => {
-    res.render('events', { events })
-  })
-})
-
-router.get('/usercarts', (req, res) => {
-  Usercart.getUsercarts(usercarts => {
-    res.render('usercarts', { usercarts })
+    res.findAll('events', { events })
   })
 })
 

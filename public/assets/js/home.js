@@ -15,8 +15,17 @@ function loadFeatured () {
 // function to load recent artist cards
 function loadRecent (id) {
 
+const d = new Date()
+const t = d.getTime()
+const days = Math.floor(t / (86400000))
+
+const imageArray = new Array('Annie Leibovitz: Queen Elizabeth', 'Sebastio Salgado: elephant', 'Henri Matisse: Femme Au Chapeau 1905')
+
+let i = days % imageArray.length
+
+const img = new Image()
+img.src = imageArray[i]
 }
+window.onload = loadFeatured()
 
-loadFeatured()
-
-loadRecent()
+window.onload = loadRecent()
