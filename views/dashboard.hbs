@@ -1,0 +1,30 @@
+{{!-- Code Example to use --}}
+
+<div id="user">
+  <p>{{ user.name }}</p>
+  <p>{{ user.age}}</p>
+</div>
+<hr>
+<form>
+  <p>
+    <label for="name">name</label>
+    <input type="text" name="name" id="name">
+  </p>
+  <p>
+    <label for="breed">breed</label>
+    <input type="text" name="breed" id="breed">
+  </p>
+  <p>
+    <label for="age">age</label>
+    <input type="number" name="age" id="age">
+  </p>
+  <button id="addPet" data-id="{{ user.id }}">Add Pet</button>
+</form>
+<hr>
+<ul id="pets">
+  {{#each user.pets}}
+  <li>Name: {{this.dataValues.name}} | Breed: {{this.dataValues.breed}} | Age: {{this.dataValues.age}}</li>
+  {{/each}}
+</ul>
+
+<script src="../dashboard.js"></script>
