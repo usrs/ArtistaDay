@@ -26,7 +26,7 @@ Item.init({
   },
   eventId: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   }
 }, { sequelize, modelName: 'item' })
 
