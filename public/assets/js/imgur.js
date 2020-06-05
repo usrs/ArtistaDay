@@ -7,7 +7,7 @@ imgur.setClientId(process.env.ClientId)
 imgur.uploadFile(document.getElementById('file').textContent)
   .then(function (json) {
     console.log(json.data.link)
-    axios.post('/dashboard' function (req, res) {
+    axios.post(`/dashboard/${artistId}`, {
       res.send(document.getElementById('fname').textContent)
       res.send(json.data.link)
       res.sendStatus(200)
