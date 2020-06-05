@@ -17,6 +17,6 @@ app.get('/', function (req, res) {
 })
 
 require('./db').sync()
-  .then(() => {
-    app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000'))
-  })
+  .then(() =>
+    app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000')))
+  .catch(err => console.error(err))

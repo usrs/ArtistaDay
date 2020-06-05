@@ -5,11 +5,21 @@ const goToProductPage = (id) => {
 goToProductPage()
 
 // function to load the featured artist of the day
-function loadFeatured () {
-  const artistArray = [
-    { "Annie Leibovitz": ["Queen Elizabeth", "Rolling Stones"] }, { "Sebastio Salgado": ["elephant", "baobao tree"] }, { "Henri Matisse": ["Femme Au Chapeau", "Blue Nude"] }]
-  let featuredArtist = artistArray[Math.floor(Math.random() * artistArray.length)]
-  const displayedArtwork = imageArray[Math.floor(Math.random() * imageArray.length)]
+const artistArray = {
+  "Annie Leibovitz": ["033-rolling-stones.jpg", "Nicole-Kidman-Portrait-1990.jpg"], 
+  "Sebastio Salgado": ["elephant.jpg", "Untitled-Mexico.1980.jpg"], "Henri Matisse": ["Femme A_Chapeau_1905", "Blue_Nude_II_1952.jpg"]
+}
+let featuredArtist = artistArray[Math.floor(Math.random() * artistArray.length)]
+let featuredWork = featuredArtist[0]
+
+function loadFeatured (featuredWork) {
+  const displayArtwork 
+}
+
+for (i = 0; i < artistArray.length; i++) {
+  for (j = 0; j < artistArray[i].length; j++) {
+    console.log([i][j][0])
+  }
 }
 
 // function to load recent artist cards
@@ -26,8 +36,8 @@ function loadRecent (id) {
   img.src = imageArray[i]
   const i = days % imageArray.length
 
-  function loadNew(){
-    let featuredArtist = yesterday
+  function loadNewCards(){
+    let Artist = yesterday
     imageArray.pop()
     imageArray.unshift(yesterday)
   }
