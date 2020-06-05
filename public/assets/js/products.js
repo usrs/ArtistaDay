@@ -6,5 +6,3 @@ document.getElementById().addEventListener('click',()=>{
   pageRedirect()
 
 })
-
-  

@@ -1,6 +1,6 @@
 #Problem
-For Fine Art artists, the transition to online has been difficult. Upkeep to create your own ecommerce website is expensive and time-consuming, while having your work featured on a website like Etsy or Amazon results in being one of tens of thousands of artists and is difficult for users to even find your work. For consumers, finding unique art from individual artists online is overwhelming and time consuming. There is no platform that provides a curated experience. 
+For Fine Art artists, the transition to online commerce has been difficult. Upkeep needed to create your own ecommerce website is expensive and time-consuming, while having your work featured on a website like Etsy or Amazon results in being one of tens of thousands of artists and is difficult for users to even find your work. For consumers, finding unique art from individual artists online is overwhelming and time consuming. There is no platform that provides a curated experience. 
 
 #Solution
 ArtistADay provides a curated fine art shopping experience by featuring one independent artist a day in a timed sales event. 
-This enables independent artists to gain more exposure while providing consumers with an easy to way to find unique art and support indpendent artists at an affordable price. 
+This enables independent artists to gain more exposure while providing consumers with an easy to way to find unique art and support independent artists at an affordable price. 
