@@ -9,3 +9,4 @@ Event.belongsTo(Artist)
 Item.belongsTo(Artist)
 
 module.exports = { Artist, Event, Item }
+

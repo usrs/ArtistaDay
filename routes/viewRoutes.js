@@ -1,21 +1,21 @@
 const router = require('express').Router()
 const { Artist, Item, Event } = require('../models')
-const artistArray = {
-  "Annie Leibovitz": ["https://i.imgur.com/vqJyZHA.jpg", "https://i.imgur.com/7BlgCXF.jpg"],
-  "Sebastio Salgado": ["https://i.imgur.com/9JYpOT5.jpg", "https://i.imgur.com/6sHrO4p.jpg"], 
-  "Henri Matisse": ["https://i.imgur.com/wzhwvZY.jpg", "https://i.imgur.com/Y6xdYHC.jpg"]
-}
+// const artistArray = {
+//   "Annie Leibovitz": ["https://i.imgur.com/vqJyZHA.jpg", "https://i.imgur.com/7BlgCXF.jpg"],
+//   "Sebastio Salgado": ["https://i.imgur.com/9JYpOT5.jpg", "https://i.imgur.com/6sHrO4p.jpg"], 
+//   "Henri Matisse": ["https://i.imgur.com/wzhwvZY.jpg", "https://i.imgur.com/Y6xdYHC.jpg"]
+// }
 
-let i
-let j
+// let i
+// let j
 
-const featuredWork = {
-  for (i = 0; i < artistArray.length; i++) {
-    for (j = 0; j < artistArray[i].length; j++) {
-      console.log([i][j][0])
-    }
-  }
-}
+// const featuredWork = {
+//   for (i = 0; i < artistArray.length; i++) {
+//     for (j = 0; j < artistArray[i].length; j++) {
+//       console.log([i][j][0])
+//     }
+//   }
+// }
 
 // const featuredWork = artistArray.featuredArtist[0]
 
