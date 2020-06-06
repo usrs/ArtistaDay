@@ -44,13 +44,17 @@
 
     </footer>
   </div>
-  <scriot>
-    const getArtists = () => {
-    axios.get(`/api/artists`)
-    .then(({ data }) => {
-    data.artists.forEach(artist => {
-    let artistElem = document.createElement('div')
-    artistElem.innerHTML = `
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+ 
+ 
+ 
+ const getArtists = () => {
+    axios.get('/api/artists')
+      .then(({ data }) => {
+        data.artists.forEach(artist => {
+          let artistElem = document.createElement('div')
+          artistElem.innerHTML = `
     <div class="col s4">
       <div class="card medium">
         <div class="card-image">
@@ -67,9 +71,17 @@
     </div>
     </div>
     `
-    document.getElementbyId('other-featured-artists-section').append(artistElem)
-    })
-    })
-  </scriot>
+          document.getElementbyId('other-featured-artists-section').append(artistElem)
+        })
+      });
+
+
+    getArtists()
+
+ 
+</script>
+  
+ 
+ 
 </body>
 </html>
