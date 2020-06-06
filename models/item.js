@@ -8,8 +8,8 @@ Item.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  url: {
-    type: DataTypes.BLOB,
+  productUrl: {
+    type: DataTypes.TEXT,
     allowNull: false
   },
   category: {
@@ -18,11 +18,17 @@ Item.init({
   },
   price: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   },
-  eventId: {
+  artistId: {
     type: DataTypes.INTEGER,
     allowNull: false
+  },
+  // FOREIGN KEY (artistId) REFERENCES artists(id)
+
+  eventId: {
+    type: DataTypes.INTEGER,
+    allowNull: true
   }
 }, { sequelize, modelName: 'item' })
 

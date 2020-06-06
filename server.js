@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
   res.render('home')
 })
 
-require('./db').sync({ force:true })
-  .then(() => {
-    app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000'))
-  })
+require('./db').sync()
+  .then(() =>
+    app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000')))
+  .catch(err => console.error(err))
