@@ -8,11 +8,7 @@ Item.init({
     type: DataTypes.STRING,
     allowNull: false
   },
-  productUrl: {
-    type: DataTypes.BLOB,
-    allowNull: false
-  },
-  artistUrl: {
+  url: {
     type: DataTypes.BLOB,
     allowNull: false
   },
