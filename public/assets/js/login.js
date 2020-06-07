@@ -1,12 +1,10 @@
 // code snippet to customize
 
-document.getElementById("register").addEventListener("click", (event) => {
+
+document.getElementById("login").addEventListener("click", (event) => {
   event.preventDefault();
   axios
-    .post("/api/users", {
-      name: document.getElementById("name").value,
-      age: document.getElementById("age").value,
-    })
+    .get(`/api/login/${document.getElementById("artistName").value}`)
     .then(({ data }) => {
       localStorage.setItem("user", data.id);
       window.location = "/dashboard.html";
@@ -14,10 +12,13 @@ document.getElementById("register").addEventListener("click", (event) => {
     .catch((err) => console.error(err));
 });
 
-document.getElementById("login").addEventListener("click", (event) => {
+
+document.getElementById("register").addEventListener("click", (event) => {
   event.preventDefault();
   axios
-    .get(`/api/login/${document.getElementById("lname").value}`)
+    .post("/api/artists", {
+      name: document.getElementById("artistName").value,
+    })
     .then(({ data }) => {
       localStorage.setItem("user", data.id);
       window.location = "/dashboard.html";
