@@ -1,45 +1,40 @@
 
 -- Login 
-/api/users/:password/:username/login
+/api/artists/:username/login
 {
 	"username" : "#",
-	"password" : '#'
+	
 }
 
 -- Get user info
-/api/users/info/:password/:uuid 
+/api/artists/:uuid 
 
--- Add new user/register syntax
-/api/users/register
+-- Add new artist/register syntax
+/api/artists/register
 {
-	"username" : "SlimJim",
-	"password" : "123",
-	"firstName" : "Slim",
-	"lastName" : "Jim",
-	"age" : 25,
-	"email" : "SlimJim@gmail.com",
-	"gender" : "male",
+	"username" : "AnnieLebovitz",
+	"firstName" : "Annie",
+	"lastName" : "Lebovitz",
+	"bio" : "bio text",
+	"artistPhoto" : "url",
 	"activated": 0
 }
 
--- Update user info
-/api/users/update/:password/:uuid
+-- Update artist info
+/api/artists/update/:uuid
 {
 	"username" : "#",
-	"password" : "#",
-	"firstName" : "#",
-	"lastName" : "#",
-	"age" : #,
-	"email" : "#@#.#",
-	"gender" : "male",
+	"firstName" : "Annie",
+	"lastName" : "Lebovitz",
+	"bio" : "bio text",
+	"artistPhoto" : "url",
 	"activated": #
 }
 
 -- Delete account
-/api/users/delete/:password/:uuid
+/api/artists/delete/:uuid
 
--- Unfriend syntax - requires 2 params userUuid and friendUuid
+
 {
-	"userUuid" : "provide user 1 uuid",
-	"friendUuid" : "provide user 2 uuid"
+	"artistUuid" : "provide user 1 uuid"
 } 
