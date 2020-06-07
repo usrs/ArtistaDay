@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express')
 const { join } = require("path")
 const imgur = require('imgur')
@@ -16,7 +17,7 @@ app.get('/dashboard', (req, res) => {
 // send the file to your route after uploading
 // use imgur in the server route
 
-require("./connection")
+require("./db")
   .sync()
   .then(() => app.listen(3000, () => console.log("http://localhost:3000")))
   .catch((err) => console.error(err));
