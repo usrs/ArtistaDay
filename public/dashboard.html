@@ -7,10 +7,10 @@
 </head>
 <body>
   <h1>Dashboard</h1>
-  <form action="/dashboard" method="post">
+  <form id="imageUpload" action="/dashboard" method="POST" enctype=multipart/form-data>
     <input type="file" name="photo" />
     <button type="submit">Submit</button>
   </form>
-  <script type="text/javascript" src="/dashboard.js"></script>
+  <script type="text/javascript" src="./assets/js/dashboard.js"></script>
 </body>
 </html>

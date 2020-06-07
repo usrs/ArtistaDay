@@ -14,6 +14,7 @@ router.get("/dashboard/:id", (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
-  res.sendfile("../public/dashboard.html");
+  res.sendfile("public/dashboard.html");
 });
+
 module.exports = router;

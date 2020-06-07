@@ -1,4 +1,4 @@
-document.querySelector('form').addEventListener('submit', function(event) {
+document.getElementById('imageUpload').addEventListener('submit', function(event) {
   event.preventDefault(); // prevent browser form refeshing the page
 
   // convert the photo into Base64 format

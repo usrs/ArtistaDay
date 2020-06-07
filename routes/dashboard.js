@@ -1,10 +1,12 @@
 const router = require("express").Router()
+const imgur = require('imgur')
 
-app.post("/dashboard", (req, res) => {
+router.post("/dashboard", (req, res) => {
   const { photo } = req.body
   const base64Photo = photo.split(",")[1]
-  imgur.setClientId(process.env.ClientID)
-  console.log(imgur.getClientId())
+  // imgur.uploadUrl('https://api.imgur.com/3/upload')
+  imgur.loadClientId(process.env.ClientID);
+  console.log('im working here!')
   imgur
     .uploadBase64(base64Photo)
     .then((json) => {
