@@ -5,10 +5,8 @@ const Op = Sequelize.Op;
 const { Artist, Item, Event, Upload } = require("../models");
 
 //artist login
-router.get("/artists/:artistName/login", (req, res) => {
-  Artist.findOne({
-    where: { artistName: req.params.artistName},
-  })
+router.get("/artists/:username/:password/login", (req, res) => {
+  Artist.findOne({ where : { username: req.params.username, password: req.params.password }})
     .then((data) =>
       data === null ? res.json(0) : res.json(data.dataValues.uuid)
     )

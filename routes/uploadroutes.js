@@ -3,28 +3,28 @@ let fs = require("fs");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 const moment = require("moment");
-const { User, Post, Comment, Friend } = require("../models");
+const { Artist, Upload, Item, Event } = require("../models");
 
-// Find most recent friend posts
-router.get("/posts/friendrecentposts/:userUuid", (req, res) => {
-  // Find all users where userUuid equal to uuid
-  User.findAll({
-    where: { uuid: req.params.userUuid },
-    include: [{ model: User, as: "friend", attributes: ["uuid"] }],
+// Find most recent items
+router.get("/items/:artistid", (req, res) => {
+  // Find all items where artist id to uuid
+  Artist.findAll({
+    where: { artistid: req.params.artistid },
+    include: [{ model: Item, as: "artistItems", attributes: [""] }],
   })
     .then(async (data) => {
       // Turn data into an array
       data = await JSON.parse(JSON.stringify(data[0]));
 
       // Now data is an array, we can loop through and filter out an object that we want
-      data = data.friend.map((val) => {
-        return val.uuid;
+      data = data.item.map((val) => {
+        return val.id;
       });
 
-      Post.findAll({
-        where: { userUUid: { [Op.in]: data } },
+      Artist.findAll({
+        where: { artistId: { [Op.in]: data } },
         attributes: [Sequelize.fn("MAX", Sequelize.col("id"))],
-        group: ["userUuid"],
+        group: ["artistId"],
         raw: true,
       })
         .then(async (object) => {
@@ -33,10 +33,10 @@ router.get("/posts/friendrecentposts/:userUuid", (req, res) => {
             parseInt(JSON.stringify(value).split(/[\:}]/)[1])
           );
           object.sort((a, b) => a.id - b.id);
-          Post.findAll({
+          Item.findAll({
             where: { id: { [Op.in]: object } },
             attributes: ["id", "body", "createdAt"],
-            include: [{ model: User, attributes: ["firstName", "lastName"] }],
+            include: [{ model: Artist, attributes: ["name", "bio"] }],
           })
             .then((post) => res.json(post))
             .catch((err) => console.error(err));
@@ -46,31 +46,31 @@ router.get("/posts/friendrecentposts/:userUuid", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-// Find all posts 
-router.get("/posts/findall/:userUuid", (req, res) => {
-  Post.findAll({ where: { userUuid: req.params.userUuid }, include: [Comment] })
+// Find all items 
+router.get("/items/findall/:artistId", (req, res) => {
+ Item.findAll({ where: { artistId: req.params.artistId } })
     .then((data) => {
       res.json(data);
     })
     .catch((err) => console.log(404));
 });
 
-// Get a post 
-router.get("/posts/getpost/:postId", (req, res) => {
-  Post.findOne({ where: { id: req.params.postId }, include: [Comment] })
+// Get an item
+router.get("/items/getitem/:itemId", (req, res) => {
+ Item.findOne({ where: { id: req.params.itemId })
     .then((data) => {
       res.json(data);
     })
     .catch((err) => console.log(404));
 });
 
-// Add a Post - - Inprogress (Working on getting the image work)
-router.post("/posts/addpost", async (req, res) => {
+// Add an  item- - Inprogress (Working on getting the image work)
+router.post("/items/addItem", async (req, res) => {
   let id = req.rawHeaders.findIndex((item) => item === "Cookie");
   id = req.rawHeaders[id + 1].split(/[\=;" "]/);
 
   let temp;
-  let uuid;
+  let uuuid;
   id.map((val, key) => {
     if (val === "name") {
       uuid = id[key + 1];
@@ -101,36 +101,36 @@ router.post("/posts/addpost", async (req, res) => {
   }
 
   path = check ? path : "#";
-  let body = { userUuid: uuid, body: req.body.posttext, image: path };
+  let body = { artistid: uuid, body: req.body.posttext, image: path };
 
-  Post.create(body)
+  Item.create(body)
     .then((data) => {
-      data.dataValues.comments = [];
+      data.dataValues = [];
       // console.log(data.dataValues.comments = [])
       // res.json(data)
-      User.findOne({
-        where: { uuid: uuid },
-        attributes: ["firstName", "lastName"],
+      Artist.findOne({
+        where: { artistid: artistid },
+        attributes: ["name", "bio"],
       })
-        .then(({ firstName, lastName }) => {
-          res.json([{ data }, { firstName, lastName }]);
+        .then(({ name }) => {
+          res.json([{ data }, { name }]);
         })
         .catch((err) => console.error(err));
     })
     .catch((err) => console.error(err));
 });
 
-// Update Post info - Inprogress (Working on getting the image work)
-router.put("/posts/update/:userUuid/:postId", (req, res) => {
-  Post.update(req.body, { where: { id: req.params.postId } })
+// Update item info - Inprogress (Working on getting the image work)
+router.put("/items/update/:artistId/:itemId", (req, res) => {
+  Item.update(req.body, { where: { id: req.params.postId } })
     .then(() => res.sendStatus(200))
     .catch((err) => console.error(err));
 });
 
-//delete a post
-router.delete("/posts/delete/:userUuid/:postId", (req, res) => {
-  Post.destroy({
-    where: { id: req.params.postId, userUuid: req.params.userUuid },
+//delete an item
+router.delete("/items/delete/:artistId/:itemId", (req, res) => {
+  Item.destroy({
+    where: { id: req.params.postId, artistId: req.params.artistId },
   })
     .then(() => res.sendStatus(200))
     .catch((err) => console.error(err));
