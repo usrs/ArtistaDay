@@ -10,7 +10,7 @@ router.get("/items/:artistid", (req, res) => {
   // Find all items where artist id to uuid
   Artist.findAll({
     where: { artistid: req.params.artistid },
-    include: [{ model: Item, as: "artistItems", attributes: [""] }],
+    include: [{ model: Item }],
   })
     .then(async (data) => {
       // Turn data into an array
@@ -63,6 +63,7 @@ router.get("/items/getitem/:itemId", (req, res) => {
     })
     .catch((err) => console.log(404));
 });
+
 
 // Add an  item- - Inprogress (Working on getting the image work)
 router.post("/items/addItem", async (req, res) => {
@@ -130,7 +131,7 @@ router.put("/items/update/:artistId/:itemId", (req, res) => {
 //delete an item
 router.delete("/items/delete/:artistId/:itemId", (req, res) => {
   Item.destroy({
-    where: { id: req.params.postId, artistId: req.params.artistId },
+    where: { id: req.params.itemId, artistId: req.params.artistId },
   })
     .then(() => res.sendStatus(200))
     .catch((err) => console.error(err));

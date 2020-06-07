@@ -4,7 +4,8 @@ router.use('/api', require('./artistRoutes.js'))
 router.use('/api', require('./itemRoutes.js'))
 router.use('/api', require('./eventRoutes.js'))
 router.use('/api', require('./artistUserRoutes.js'))
+router.use('/api', require('./itemRoutes2.js'))
 
-router.use(require('./viewRoutes.js'))
+router.use(require('./viewRoutes2.js'))
 
 module.exports = router

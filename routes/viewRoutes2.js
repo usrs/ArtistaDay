@@ -1,35 +1,35 @@
+const { join } = require("path");
 const router = require("express").Router();
-const { Artist, Item } = require("../models");
+
+let isLogin = false;
 
 router.get("/", (req, res) => {
-  res.render("login");
+  // if(!isLogin)
+  res.sendFile(join(__dirname, "../public/home.html"));
+  // else
+  // res.sendFile(join(__dirname, "../public/profile.html"));
 });
 
-router.get("/dashboard/:id", (req, res) => {
-  Artist.findOne({ id: req.params.id, include: [Item] })
-    .then((user) => {
-      res.render('dashboard', { user: user.dataValues });
-    })
-    .catch((err) => console.error(err));
+router.get("/event", (req, res) => {
+  res.sendFile(join(__dirname, "../public/event.html"));
+});
+
+router.get("/product", (req, res) => {
+  res.sendFile(join(__dirname, "../public/product.html"));
+});
+
+router.get("/login", (req, res) => {
+  res.sendFile(join(__dirname, "../public/login.html"));
 });
 
 
-router.get("/artists", (req, res) => {
-  Artist.findAll()
-    .then((artists) => res.json(artists))
-    .catch((err) => console.error(err));
+router.get("/dashboard", (req, res) => {
+  console.log(req.body);
+  if (isLogin === true) {
+    res.sendFile(join(__dirname, "../public/dashboard.html"));
+  } else {
+    res.sendFile(join(__dirname, "../public/login.html"));
+  }
 });
 
-
-router.get("/test", (req, res) => {
-  res.render("test");
-});
 module.exports = router;
-
-// router.get("/dashboard/:id", (req, res) => {
-//   Artist.findOne({ id: req.params.id, include: [Item] })
-//     .then((user) => {
-//       res.render("dashboard", { user: user.dataValues });
-//     })
-//     .catch((err) => console.error(err));
-// });
