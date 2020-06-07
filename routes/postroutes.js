@@ -5,7 +5,7 @@ const Op = Sequelize.Op;
 const moment = require("moment");
 const { User, Post, Comment, Friend } = require("../models");
 
-// Find most recent friend posts - Done (Tim)
+// Find most recent friend posts
 router.get("/posts/friendrecentposts/:userUuid", (req, res) => {
   // Find all users where userUuid equal to uuid
   User.findAll({
@@ -46,7 +46,7 @@ router.get("/posts/friendrecentposts/:userUuid", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-// Find all posts - Done (Tim)
+// Find all posts 
 router.get("/posts/findall/:userUuid", (req, res) => {
   Post.findAll({ where: { userUuid: req.params.userUuid }, include: [Comment] })
     .then((data) => {
@@ -55,7 +55,7 @@ router.get("/posts/findall/:userUuid", (req, res) => {
     .catch((err) => console.log(404));
 });
 
-// Get a post - Done (Tim)
+// Get a post 
 router.get("/posts/getpost/:postId", (req, res) => {
   Post.findOne({ where: { id: req.params.postId }, include: [Comment] })
     .then((data) => {
@@ -127,7 +127,7 @@ router.put("/posts/update/:userUuid/:postId", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-// Delete a Post - Done (Tim)
+//delete a post
 router.delete("/posts/delete/:userUuid/:postId", (req, res) => {
   Post.destroy({
     where: { id: req.params.postId, userUuid: req.params.userUuid },
