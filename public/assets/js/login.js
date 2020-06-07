@@ -1,5 +1,3 @@
-const socket = io();
-
 document.getElementById("login").addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("test");
@@ -23,11 +21,11 @@ document.getElementById("register").addEventListener("submit", (event) => {
  {
     let newArtist = {
       name: event.target.artistName.value
-      // bio: event.target.bio.value,
-      // artistPhoto: event.target.artistPhoto.value,
+      bio: event.target.bio.value,
+      artistPhoto: event.target.artistPhoto.value,
       activated: 0,
     };
-    axios.post("/api/artists/register", newArtist)
+    axios.post('/api/artists/register', newArtist)
       .then(() => {
         socket.emit(
           "newArtistSignUp",
