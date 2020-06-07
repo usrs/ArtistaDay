@@ -1,15 +1,15 @@
+// code to customize
 
-const getUser = () => {
-  axios.get(`/api/users/${localStorage.getItem('user')}`)
+const getOneArtist = () => {
+  axios.get('/api/artists/:id')
     .then(({ data }) => {
-      document.getElementById('user').innerHTML = `
-      <p>${data.name}</p>
-      <p>${data.age}</p>
+      document.getElementById('dashGreeting').innerHTML = `
+      <h5>${data.name}</h5>
       `
-      data.pets.forEach(pet => {
-        let petElem = document.createElement('li')
+      data.items.forEach(item => {
+        let itemElem = document.createElement('li')
         petElem.textContent = `
-          Name: ${pet.name} | Breed: ${pet.breed} | Age: ${pet.age}
+          Name: ${item.name} | URL: ${item.url} 
         `
         document.getElementById('pets').append(petElem)
       })
@@ -17,7 +17,7 @@ const getUser = () => {
 }
 
 
-document.getElementById('addPet').addEventListener('click', event => {
+document.getElementById('addItem').addEventListener('click', event => {
   event.preventDefault()
 
   axios.post('/api/pets', {
