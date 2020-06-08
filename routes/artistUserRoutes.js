@@ -38,7 +38,7 @@ router.put('/artists/update/:id', (req,res) =>
 
 // Get all artist items
 router.get("/artists/items/:username", (req, res) => {
-  User.findAll({ where: { username: req.params.username },
+  Artist.findAll({ where: { username: req.params.username },
     include: [
       {
         model: Item
@@ -48,10 +48,10 @@ router.get("/artists/items/:username", (req, res) => {
     .then(async (data) => {
       data = await JSON.parse(JSON.stringify(data));
       let artistInfo = {
+        username: data[0].username
         name: data[0].name,
         bio: data[0].bio,
         artistPhoto: data[0].artistPhoto,
-        artidId: data[0].artistId
       };
       let items = data[0].items.map((val) => {
         return {
