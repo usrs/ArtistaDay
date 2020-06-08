@@ -37,8 +37,8 @@ router.put('/artists/update/:id', (req,res) =>
 
 
 // Get all artist items
-router.get("/artists/items/:id", (req, res) => {
-  User.findAll({ where: { id: req.params.id },
+router.get("/artists/items/:username", (req, res) => {
+  User.findAll({ where: { username: req.params.username },
     include: [
       {
         model: Item
@@ -53,14 +53,13 @@ router.get("/artists/items/:id", (req, res) => {
         artistPhoto: data[0].artistPhoto,
         artidId: data[0].artistId
       };
-      let upload = data[0].uploads
       let items = data[0].items.map((val) => {
         return {
           title: val.title,
-          productUrl: val.url,
+          productUrl: val.productUrl,
         };
       });
-      res.json(aboutArtist);
+      res.json(data);
     })
     .catch((err) => console.error(err));
 });

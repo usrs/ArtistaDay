@@ -12,21 +12,16 @@ Item.init({
     type: DataTypes.TEXT,
     allowNull: false
   },
-  category: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
   price: {
     type: DataTypes.INTEGER,
     allowNull: true
   },
-  artistId: {
+  artistUsername: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
   },
 
   // FOREIGN KEY (artistId) REFERENCES artists(id)
-
   eventId: {
     type: DataTypes.INTEGER,
     allowNull: true
