@@ -1,7 +1,7 @@
 require('dotenv').config()
-// Use socket.io 
+
 const http = require("http")
-const socketio = require("socket.io")
+
 
 //File upload
 const bodyParser = require("body-parser");
@@ -30,9 +30,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(require('./routes'))
 
-// app.get('/', function (req, res) {
-//   res.render('home')
-// })
+
 
 require('./connection')
   .sync()
