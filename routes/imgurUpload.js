@@ -1,7 +1,7 @@
 const router = require("express").Router()
 const imgur = require('imgur')
 
-router.post("/dashboard/upload", (req, res) => {
+router.post("/dashboard", (req, res) => {
   const { photo } = req.body
   const base64Photo = photo.split(",")[1]
   // imgur.uploadUrl('https://api.imgur.com/3/upload')

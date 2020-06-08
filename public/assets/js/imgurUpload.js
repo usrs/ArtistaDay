@@ -9,7 +9,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     console.log(reader.result);
 
     // submit the file to the server
-    fetch('/dashboard/upload', {
+    fetch('/api/dashboard', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
