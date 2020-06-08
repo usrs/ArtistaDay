@@ -36,33 +36,33 @@ router.put('/artists/update/:id', (req,res) =>
 })
 
 
-// Get all artist items
-router.get("/artists/items/:username", (req, res) => {
-  Artist.findAll({ where: { username: req.params.username },
-    include: [
-      {
-        model: Item
-      }
-    ],
-  })
-    .then(async (data) => {
-      data = await JSON.parse(JSON.stringify(data));
-      let artistInfo = {
-        username: data[0].username
-        name: data[0].name,
-        bio: data[0].bio,
-        artistPhoto: data[0].artistPhoto,
-      };
-      let items = data[0].items.map((val) => {
-        return {
-          title: val.title,
-          productUrl: val.productUrl,
-        };
-      });
-      res.json(data);
-    })
-    .catch((err) => console.error(err));
-});
+// // Get all artist items
+// router.get("/artists/items/:username", (req, res) => {
+//   Artist.findAll({ where: { username: req.params.username },
+//     include: [
+//       {
+//         model: Item
+//       }
+//     ],
+//   })
+//     .then(async (data) => {
+//       data = await JSON.parse(JSON.stringify(data));
+//       let artistInfo = {
+//         username: data[0].username
+//         name: data[0].name,
+//         bio: data[0].bio,
+//         artistPhoto: data[0].artistPhoto,
+//       };
+//       let items = data[0].items.map((val) => {
+//         return {
+//           title: val.title,
+//           productUrl: val.productUrl,
+//         };
+//       });
+//       res.json(data);
+//     })
+//     .catch((err) => console.error(err));
+// });
 
 
 // Delete a artist requires to 2 fields, name and artist id 
