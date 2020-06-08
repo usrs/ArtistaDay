@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/usrs/ArtistaDay#readme",
   "dependencies": {
-    "chocolat": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",
