@@ -14,11 +14,11 @@ Artist.init({
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     bio: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
     },
     artistPhoto: {
       type: DataTypes.TEXT,
