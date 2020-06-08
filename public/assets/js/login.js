@@ -1,6 +1,6 @@
 // login
 
-document.getElementById("login").addEventListener("click", (event) => {
+document.getElementById("login").addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("test");
   signIn(event.target.artistName.value);
@@ -18,7 +18,7 @@ function signIn(val1) {
 }
 
 // register
-document.getElementById("register").addEventListener("click", (event) => {
+document.getElementById("register").addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("register");
  {
