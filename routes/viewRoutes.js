@@ -22,7 +22,7 @@ router.get('/dashboard', (req, res) => {
 router.get('artists/:id', (req, res) => {
   Artist.findOne({ id: req.params.id, include: [Item] })
     .then(artist => {
-      res.sendFile(join(__dirname, '/../../AristaDay/public/assets/html/artistportal.html'))
+      res.sendFile(join(__dirname, '/../../AristaDay/public/assets/html/dashboard.html'))
     })
     .catch(err => console.error(err))
 })
