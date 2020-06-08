@@ -24,6 +24,7 @@ Item.init({
     type: DataTypes.INTEGER,
     allowNull: false
   },
+
   // FOREIGN KEY (artistId) REFERENCES artists(id)
 
   eventId: {

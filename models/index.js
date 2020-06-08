@@ -1,7 +1,7 @@
 const Artist = require('./Artist.js')
 const Event = require('./Event.js')
 const Item = require('./Item.js')
-const Upload = require('./upload.js')
+
 
 
 
@@ -11,8 +11,6 @@ Event.belongsTo(Artist)
 Artist.hasMany(Item, {foreignKey: {allowNull: false, onDelete: "CASCADE"}});
 Item.belongsTo(Artist);
 
-Artist.hasMany(Upload, {foreignKey: {allowNull: false, onDelete: "CASCADE"}});
-Upload.belongsTo(Artist);
 
 
-module.exports = { Artist, Event, Item, Upload }
+module.exports = { Artist, Event, Item }
