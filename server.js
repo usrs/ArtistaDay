@@ -23,5 +23,5 @@ app.use(require('./routes'))
 
 require('./db')
   .sync()
-  .then(() => server.listen(PORT, () => console.log("http://localhost:3000")))
+  .then(() => app.listen(PORT, () => console.log("http://localhost:3000")))
   .catch((err) => console.error(err));
