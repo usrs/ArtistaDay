@@ -1,4 +1,4 @@
-document.getElementById('imageUpload').addEventListener('submit', function(event) {
+document.querySelector('form').addEventListener('submit', function(event) {
   event.preventDefault(); // prevent browser form refeshing the page
 
   // convert the photo into Base64 format
@@ -9,7 +9,7 @@ document.getElementById('imageUpload').addEventListener('submit', function(event
     console.log(reader.result);
 
     // submit the file to the server
-    fetch('/dashboard', {
+    fetch('/dashboard/upload', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
