@@ -10,6 +10,8 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }))
 
 app.use(require("./routes"));
 
+const PORT = process.env.PORT || 3000;
+
 // app.get('/dashboard', (req, res) => {
 //   res.sendFile(__dirname + '/public/dashboard.html')
 // })
@@ -38,5 +40,5 @@ app.use(require("./routes"));
 
 require("./db")
   .sync()
-  .then(() => app.listen(3000, () => console.log("http://localhost:3000")))
+  .then(() => app.listen(PORT, () => console.log("http://localhost:3000")))
   .catch((err) => console.error(err));

@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="dist/css/chocolat.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
+
 <body>
-  <h1>Dashboard</h1>
-  <form id="imageUpload" action="/dashboard" method="POST" enctype=multipart/form-data>
-    <input type="file" name="photo" />
-    <button type="submit">Submit</button>
-  </form>
-  <script type="text/javascript" src="./assets/js/imgurUpload.js"></script>
+  <div class="fluid-container">
+   
+  <!-- end of nav bar -->
+
+  <!-- form section -->
+  <div class="container">
+    <div class="divider"></div>
+    <div class="section">
+
+      <div class="row">
+        <h3>Add Your Work</h3>
+        <div class="col s8 form-section" id="addItems">
+          <form action="/dashboard" method="POST" class="artist-form" id="addItemForm" enctype=multipart/form-data>
+            <div>
+              <label for="file-upload">Please select a file-upload</label><br><br>
+              <input type="file" name="file" id="productUrl"><br><br>
+            </div>
+            <p>
+              <label for="awtitle">Artwork Title:</label><br>
+            </p>
+            <input type="text" id="artworkTitle" name="fname"><br>
+            <div>
+              <button class="btn waves-effect waves-light" id="upload" type="submit" name="action" action="/api/items/additem">Submit
+                <i class="material-icons right">send</i>
+              </button><br><br>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class ="row">
+        <div id="artistItems"></div>
+      </div>
+
+      <div class="row">
+        <div id="artistEvents"></div>
+      </div>
+      <!-- end of form section -->
+
+      <!-- submit button -->
+      <!-- when clicked from user experience perspective just a div that shows success or different view (doesn't redirect you) -->
+      <!-- when submit is clicked send data to api -front -->
+      <!-- container div below -->
+    </div>
+      <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script type="text/javascript" src="./assets/js/imgurUpload.js"></script>
+
+
 </body>
+
 </html>
