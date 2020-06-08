@@ -21,14 +21,26 @@
       max-width: 1000px;
       max-height: 1000px;
     }
+    
+    #timer {
+     position: absolute;
+     z-index: 1;
+     opacity: 0.5;
+     background-color: gray;
+     bottom: 10px;
+     right: -240px;
+     height: 80px;
+     width: 190px;
+     margin-right: 250px;
+   }
 
     #nameBox {
       position: absolute;
       z-index: 1;
-      opacity: 0.5;
+      opacity: 0.7;
       background-color: gray;
       bottom: 10px;
-      right: -240px;
+      left: 30px;
       height: 100px;
       width: 300px;
       margin-right: 250px;
@@ -69,12 +81,15 @@
     <div class="section">
       <div class="responsive-img hoverable" id="featured">
         <img src="https://i.imgur.com/vqJyZHA.jpg" alt="title" id="mainImg">
-        <div class="right" id="nameBox">
+        <div class="left" id="nameBox">
           <p id="artistName">Artist Name</p>
-          <p>Ends in: 00:12:36</p>
-        </div>
-      </div>
-      <a href="https://i.imgur.com/Y6xdYHC.jpg" class="prodLink">Visit product page</a>
+          </div>
+          <div id="timer">
+          <iframe
+            src="http://free.timeanddate.com/countdown/i7bh83bf/n840/cf100/cm0/cu4/ct0/cs0/ca0/co1/cr0/ss0/cac000/cpc000/pcfff/tc66c/fs100/szw192/szh81/tatSale%20Ends%20in/tac000/tptTime%20since%20Event%20started%20in/tpc000/iso2020-06-10T00:00:00"
+            allowTransparency="true" frameborder="0" width="192" height="81"></iframe>
+            </div>
+      <a href="/product" class="prodLink">Visit product page</a>
     </div>
 
     <div class="divider"></div>

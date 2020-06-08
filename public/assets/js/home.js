@@ -10,7 +10,6 @@ const getArtwork = () => {
           <p>Sale: ends July 8, 2020</p>
         </div>
       </div>
-          <a class="chocolat-image" href="${item.productUrl}">Lightbox Preview</a>
           <a href="${item.productUrl}" id="link">Visit product page</a>`
     })
     .catch(err => console.error(err))

@@ -5,12 +5,12 @@ const imgur = require('imgur')
 const app = express()
 
 app.use(express.static(join(__dirname, 'public')))
-app.use(express.json({limit: '10mb', extended: true}))
+app.use(express.json({ limit: '10mb', extended: true }))
 app.use(express.urlencoded({ limit: '10mb', extended: true }))
 
-app.use(require("./routes"));
+app.use(require("./routes"))
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000
 
 // app.get('/dashboard', (req, res) => {
 //   res.sendFile(__dirname + '/public/dashboard.html')
@@ -34,11 +34,10 @@ const PORT = process.env.PORT || 3000;
 //   res.end();
 // });
 
-
 // send the file to your route after uploading
 // use imgur in the server route
 
-require("./db")
+require('./db')
   .sync()
-  .then(() => app.listen(PORT, () => console.log("http://localhost:3000")))
-  .catch((err) => console.error(err));
+  .then(() => app.listen(PORT, () => console.log('http://localhost:3000')))
+  .catch((err) => console.error(err))
