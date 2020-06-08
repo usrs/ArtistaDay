@@ -4,11 +4,6 @@ const sequelize = require('../db')
 class Artist extends Model { }
 
 Artist.init({
-    uuid: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
