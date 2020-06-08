@@ -1,24 +1,36 @@
 const { Model, DataTypes } = require('sequelize')
-const sequelize = require('../connection')
+const sequelize = require('../db')
 
 class Item extends Model { }
 
 Item.init({
-  name: {
+  title: {
     type: DataTypes.STRING,
+    allowNull: false
+  },
+  productUrl: {
+    type: DataTypes.TEXT,
     allowNull: false
   },
   category: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   price: {
     type: DataTypes.INTEGER,
-    allowNull: false
-  }
-  eventId: {
+    allowNull: true
+  },
+  // artistName: {
+  //   type: DataTypes.STRING,
+  //   allowNull: false
+  // },
+  artistId: {
     type: DataTypes.INTEGER,
     allowNull: false
+  },
+  eventId: {
+    type: DataTypes.INTEGER,
+    allowNull: true
   }
 }, { sequelize, modelName: 'item' })
 

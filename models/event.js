@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize')
-const sequelize = require('../connection')
+const sequelize = require('../db')
 
 class Event extends Model { }
 
@@ -14,7 +14,7 @@ Event.init({
   },
   title: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   artistId: {
     type: DataTypes.INTEGER,

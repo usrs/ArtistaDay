@@ -1,38 +1,78 @@
 const router = require('express').Router()
-const { Artist, Item, Event, Usercart } = require('../controller')
+const { join } = require('path')
+const { Artist, Item } = require('../models')
+const isLogin = false
 
 router.get('/', (req, res) => {
-  res.render('index', {
-    startDate: '2020-07-12 00:00:00',
-    endDate: '2020-07-12 11:59:59',
-    title: 'ArtistADay',
-    artistId: 1,
-    discount: 40
-  })
+  res.sendFile(join(__dirname, '/../public/assets/html/home.html'))
+})
+
+router.get('/artists/:id', (req, res) => {
+  Artist.findOne({ id: req.params.id, include: [Item] })
+    .then((artist) => {
+      res.sendFile('dashboard', { artist: artist.dataValues })
+    })
+    .catch((err) => console.error(err))
+})
+
+router.get('/dashboard', (req, res) => {
+  res.sendFile(join(__dirname, '/../../project2/public/assets/html/dashboard.html'))
+})
+
+router.get('artists/:id', (req, res) => {
+  Artist.findOne({ id: req.params.id, include: [Item] })
+    .then(artist => {
+      res.sendFile(join(__dirname, '/../../project2/public/assets/html/artistportal.html'))
+    })
+    .catch(err => console.error(err))
 })
 
 router.get('/artists', (req, res) => {
-  Artist.getArtists(artists => {
-    res.render('artists', { artists })
+  Artist.findAll(artists => {
+    res.sendFile(join(__dirname, '/../../project2/public/assets/html/dashboard.html'))
   })
+})
+
+router.get('items/:id', (req, res) => {
+  Item.findOne({ id: req.params.id, include: [Artist] })
+    .then(item => {
+      res.render('items', { item: item.dataValues })
+    })
+    .catch(err => console.error(err))
 })
 
 router.get('/items', (req, res) => {
-  Item.getItems(items => {
-    res.render('items', { items })
+  Item.findAll(items => {
+    res.sendFile(join(__dirname, '/../../project2/public/assets/html/product.html'))
   })
 })
 
-router.get('/events', (req, res) => {
-  Event.getEvents(events => {
-    res.render('events', { events })
-  })
+router.get('/', (req, res) => {
+  // if(!isLogin)
+  res.sendFile(join(__dirname, '../public/home.html'))
+  // else
+  // res.sendFile(join(__dirname, '../public/profile.html'))
 })
 
-router.get('/usercarts', (req, res) => {
-  Usercart.getUsercarts(usercarts => {
-    res.render('usercarts', { usercarts })
-  })
+router.get('/event', (req, res) => {
+  res.sendFile(join(__dirname, '../public/assets/html/event.html'))
+})
+
+router.get('/product', (req, res) => {
+  res.sendFile(join(__dirname, '../public/assets/html/product.html'))
+})
+
+router.get('/login', (req, res) => {
+  res.sendFile(join(__dirname, '../public/assets/html/login.html'))
+})
+
+router.get('/dashboard', (req, res) => {
+  console.log(req.body)
+  if (isLogin === true) {
+    res.sendFile(join(__dirname, '../public/dashboard.html'))
+  } else {
+    res.sendFile(join(__dirname, '../public/login.html'))
+  }
 })
 
 module.exports = router

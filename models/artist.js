@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize')
-const sequelize = require('../connection')
+const sequelize = require('../db')
 
 class Artist extends Model { }
 
@@ -9,29 +9,14 @@ Artist.init({
     allowNull: false
   },
   bio: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: false
   },
-  artistId: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  item1: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  item2: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  item3: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  item4: {
-    type: DataTypes.STRING,
-    allowNull: false
+  artistPhoto: {
+    type: DataTypes.TEXT,
+    allowNull: true
   }
-}, { sequelize, modelName: 'artist' })
+},
+{ timestamps: false, sequelize, modelName: 'artist' })
 
 module.exports = Artist
