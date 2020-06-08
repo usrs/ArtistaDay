@@ -16,20 +16,20 @@ router.get('/artists/:id', (req, res) => {
 })
 
 router.get('/dashboard', (req, res) => {
-  res.sendFile(join(__dirname, '/../../project2/public/assets/html/dashboard.html'))
+  res.sendFile(join(__dirname, '/../../AristaDay/public/assets/html/dashboard.html'))
 })
 
 router.get('artists/:id', (req, res) => {
   Artist.findOne({ id: req.params.id, include: [Item] })
     .then(artist => {
-      res.sendFile(join(__dirname, '/../../project2/public/assets/html/artistportal.html'))
+      res.sendFile(join(__dirname, '/../../AristaDay/public/assets/html/artistportal.html'))
     })
     .catch(err => console.error(err))
 })
 
 router.get('/artists', (req, res) => {
   Artist.findAll(artists => {
-    res.sendFile(join(__dirname, '/../../project2/public/assets/html/dashboard.html'))
+    res.sendFile(join(__dirname, '/../../AristaDay/public/assets/html/dashboard.html'))
   })
 })
 
@@ -43,7 +43,7 @@ router.get('items/:id', (req, res) => {
 
 router.get('/items', (req, res) => {
   Item.findAll(items => {
-    res.sendFile(join(__dirname, '/../../project2/public/assets/html/product.html'))
+    res.sendFile(join(__dirname, '/../../AristaDayAristaDay/public/assets/html/product.html'))
   })
 })
 
