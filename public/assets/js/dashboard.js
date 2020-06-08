@@ -12,13 +12,10 @@ function artistItems( )
             <div class="col s4">
           <div class="card large">
             <div class="card-image">
-              <img src="${data.">
+              <img src="${data.productUrl}
             </div>
             <div class="card-content">
-              <p class="more-products-work-title">Artwork Title</p>
-            </div>
-            <div class="card-action">
-              <a class="waves-effect waves-light btn-small addBtn">Add to Cart</a>
+              <p class="more-products-work-title">${data.title}</p>
             </div>
           </div>
         </div>
