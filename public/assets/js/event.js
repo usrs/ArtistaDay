@@ -1,10 +1,9 @@
-// function pageRedirect() {
-//   window.location.href = "url of product page";
-// }
+// redirect to product page  when view button is clicked
+document.getElementById('viewBtn').addEventListener("click", (event) => {
+  window.location.replace("/product");
+})
 
-// document.getElementById().addEventListener("click", () => {
-//   pageRedirect();
-// });
+
 
 const getMyArtist = () => {
   axios.get(`api/artists`)
