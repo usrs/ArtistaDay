@@ -3,12 +3,11 @@
 document.getElementById("login").addEventListener("submit", (event) => {
   event.preventDefault();
   console.log("test");
-  signIn(event.target.artistName.value);
+  signIn(event.target.username.value, event.target.password.value);
 });
 
-function signIn(val1) {
-  axios
-    .get(`/api/artists/${val1}/login`)
+function signIn(val1,val2) {
+  axios.get(`/api/artists/${val1}/${val2}login`)
     .then(({ data }) => {
         sessionSet(data);
         window.location.replace("/dashboard");
@@ -23,11 +22,12 @@ document.getElementById("register").addEventListener("submit", (event) => {
   console.log("register");
  {
     let newArtist = {
-      name: event.target.artistName.value
+      username: event.target.username.value,
+      password: event.target.password.value
       // bio: event.target.bio.value,
-      // artistPhoto: event.target.artistPhoto.value,
+    // artistPhoto: event.target.artistPhoto.value,
       // activated: 0,
-    };
+    }
     axios.post('/api/artists/register', newArtist)
       .then(( {  data }) => {
         sessionSet(data);
