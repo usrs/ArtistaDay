@@ -1,48 +1,30 @@
-
-const logOut = () => {
-  console.log("hello");
-  var date = new Date();
-
-  var utcDate = new Date(date.toUTCString());
-  utcDate.setHours(utcDate.getHours());
-  var usDate = new Date(utcDate);
-  document.cookie = `name=''; expires = ${usDate.toUTCString()}`;
-  window.location.replace("/");
-};
-
-function loggedInStatus() {
-  if (!document.cookie.split("=")[1]) {
-  } else {
-    axios
-      .get(`/api/artists/${document.cookie.split("=")[1]}`)
-      .then(({ data }) => {
-        artistUpload(
-          data.Artist.Name,
-          data.Artist.Bio
-        );
-        document.getElementById("loggedIn").innerHTML = `
-              Logged in as ${data.Artist.Name} 
-              <button id='logOut' onclick='logOut()'>Log Out</button>
-              `;
-      })
-      .catch((err) => console.log(err));
-  }
+const getArtist = () => {
+  axios.get(`/api/artists/${localStorage.getitem('user')}`)
+  .then()
 }
 
 function artistItems( )
 { 
     artistItem.forEach(item => { 
         
-        $('.artistItems').prepend(
-            `  
-            <div class="myItems" data-id="${item.id}">
-            <h3 class ="username">  ${name} : <span class ="postbody">${item.title}</span></h3>
-            
-            <div class="image"> 
-            <img src="${item.productUrl}" alt="" class="postImage">
-               </div>
-            <hr />
-          </div>`)
+        $(".artistItems").prepend(
+          `  
+            <div class="col s4">
+          <div class="card large">
+            <div class="card-image">
+              <img src="${data.">
+              <!-- <span class="card-title">Card Title</span> -->
+            </div>
+            <div class="card-content">
+              <p class="more-products-work-title">Artwork Title</p>
+            </div>
+            <div class="card-action">
+              <a class="waves-effect waves-light btn-small addBtn">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+`
+        );
             })  
 }
     
@@ -52,16 +34,16 @@ document.getElementById('addItem').addEventListener('click', event =>
 {
   event.preventDefault()
 
-  let formData = new FormData(document.getElementById('POSTIT'))
+  let formData = new FormData(document.getElementById('artistForm'))
   // formData.append('files', )
-  if(document.getElementById('file').value.length > 0 || document.getElementById('posttext').value !== '')
+  if(document.getElementById('file').value.length > 0 || document.getElementById('itemtext').value !== '')
   {
   axios.post('api/items/additem', formData)
   .then(({ data }) => {
     if(!recent)
     {
       $('.main').scrollTop(0)
-      userPost([data[0].data],data[1].firstName,data[1].lastName)
+      artistUpload([data[0].data],data[1].firstName,data[1].lastName)
     }
     else
     {
@@ -74,10 +56,10 @@ document.getElementById('addItem').addEventListener('click', event =>
   // console.log(formData)
 
   document.getElementById('file').value = null
-  document.getElementById('posttext').value = ''
+  document.getElementById('artworkTitle').value = ''
 }
 
-document.getElementById('posttext').focus()
+document.getElementById('artworkTitle').focus()
 
 })
 

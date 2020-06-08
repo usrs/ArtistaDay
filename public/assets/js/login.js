@@ -1,4 +1,6 @@
-document.getElementById("login").addEventListener("submit", (event) => {
+// login
+
+document.getElementById("login").addEventListener("click", (event) => {
   event.preventDefault();
   console.log("test");
   signIn(event.target.artistName.value);
@@ -15,36 +17,28 @@ function signIn(val1) {
     .catch((err) => console.error(err));
 }
 
-document.getElementById("register").addEventListener("submit", (event) => {
+// register
+document.getElementById("register").addEventListener("click", (event) => {
   event.preventDefault();
   console.log("register");
  {
     let newArtist = {
       name: event.target.artistName.value
-      bio: event.target.bio.value,
-      artistPhoto: event.target.artistPhoto.value,
-      activated: 0,
+      // bio: event.target.bio.value,
+      // artistPhoto: event.target.artistPhoto.value,
+      // activated: 0,
     };
     axios.post('/api/artists/register', newArtist)
-      .then(() => {
-        socket.emit(
-          "newArtistSignUp",
-          `Artist ${event.target.name.value} has been added`
-        );
+      .then(( {  data }) => {
+        sessionSet(data);
+        window.location.replace("/dashboard");
+      }
+      
       })
       .catch((err) => console.log(err));
-    document.getElementById("signupForm").innerHTML = `
-    <h1>Success!</h1>
-    `;
-    document.getElementById("signupForm").classList.add("signupSuccess");
-//     setTimeout(() => {
-//       signIn(event.target.username.value, event.target.password.value);
-//     }, 2000);
-//   } else {
-//     console.log("Error");
-//     document.getElementById("invalid").innerText = `Invalid! Please try again.`;
-//   }
-// });
+
+    
+
 
 
 
