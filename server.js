@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+db
 const http = require("http")
 
 
@@ -32,7 +32,7 @@ app.use(require('./routes'))
 
 
 
-require('./connection')
+require('./db')
   .sync()
   .then(() => server.listen(PORT, () => console.log("http://localhost:3000")))
   .catch((err) => console.error(err));
