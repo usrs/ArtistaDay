@@ -20,18 +20,17 @@
   "homepage": "https://github.com/usrs/ArtistaDay#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "chocolat": "^1.0.1",
     "body-parser": "^1.19.0",
+    "chocolat": "^1.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.1.7-alpha.3",
     "express-handlebars": "^4.0.4",
     "materialize-css": "^1.0.0-rc.2",
+    "mysql2": "^2.1.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.11",
-    "socket.io": "^2.3.0"
+    "sequelize": "^5.21.11"
   },
   "production": {
     "use_env_variable": "DATABASE_URL"
