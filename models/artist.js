@@ -15,6 +15,22 @@ Artist.init({
   artistPhoto: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+  username: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  createdAt: {
+    allowNull: true,
+    type: DataTypes.DATE
+  },
+  updatedAt: {
+    allowNull: true,
+    type: DataTypes.DATE
   }
 }, { sequelize, modelName: 'artist' })
 
