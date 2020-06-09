@@ -78,11 +78,28 @@
  <div class="container">
   <h2 class="center-align">Upload Artwork</h2>
   <div class="responsive-img hoverable row" id=""></div>
-   <form action="/imgur" method="post">
-    <input type="text" name="name">
-    <input type="file" name="photo"/>
-    <button type="submit">Submit</button>
-   </form>
+   <div class="col s8 form-section" id="addItems">
+    <form action="/imgur" method="post" class="artist-form" id="addItemForm">
+     <div class="file-field input-field">
+      <div class="btn">
+       <span>File</span>
+       <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+       <input class="file-path validate" type="text" id="imgPath" name="imgPath">
+      </div>
+     </div>
+     <p>
+      <label for="awtitle">Artwork Title:</label><br>
+     </p>
+     <input type="text" id="artworkTitle" name="name"><br>
+     <div>
+      <button class="btn waves-effect waves-light" id="upload" type="submit" name="action"
+       action="/imgur" method="POST"><i class="material-icons">Submit Image</i>
+      </button><br><br>
+     </div>
+    </form>
+   </div>
   </div>
  </div>
 
@@ -95,7 +112,7 @@
  </footer>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- <script src="index.js"></script>
+ <script src="dashboard.js"></script>
 </body>
 
 </html>

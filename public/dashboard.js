@@ -1,9 +1,11 @@
-document.querySelector("form").addEventListener("submit", function (event) {
-  // prevent browser form refeshing the page
+document.getElementById('addItemForm').addEventListener("submit", function (event) {
+  // prevent browser from refeshing the page
   event.preventDefault() 
 
   // convert the photo into Base64 format
-  const photo = document.querySelector('input[name="photo"]')
+  const photo = document.querySelector('input[type="file"]')
+  // const photo = document.getElementById('imgPath').textContent
+  console.log(photo)
   const reader = new FileReader()
   reader.readAsDataURL(photo.files[0])
   reader.onload = function () {
@@ -24,21 +26,25 @@ document.querySelector("form").addEventListener("submit", function (event) {
   reader.onerror = function (err) {
     console.log(err);
   }
-  
-})
-
-document.getElementById('addImage').addEventListener('click', event => {
-  event.preventDefault()
-
   axios.post('/api/upload', {
-    name: document.getElementById('name').value,
-    url: document.getElementById('url').value,
+    name: document.getElementById('artworkTitle').value,
+    url: data.link,
   })
     .then(() => {
-      let imageElem = document.createElement('li')
-      imageElem.textContent = `Name: ${document.getElementById('name').value}<br><img src="" alt="">`
-      document.getElementById('images').append(imageElem)
-      document.getElementById('name').value = ''
+      console.log(data.link)
     })
     .catch(err => console.error(err))
 })
+
+// document.getElementById('addImage').addEventListener('click', event => {
+//   event.preventDefault()
+
+//   axios.post('/api/upload', {
+//     name: document.getElementById('artworkTitle').value,
+//     url: data.link,
+//   })
+//     .then(() => {
+//       console.log(data.link)
+//     })
+//     .catch(err => console.error(err))
+// })
