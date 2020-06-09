@@ -6,7 +6,7 @@ const loadCards = () => {
         const imageElem = document.createElement('div')
         imageElem.innerHTML =
           `<div class="col s3">
-          <div class="card medium">
+          <div class="card medium hoverable">
             <div class="card-image">
               <img src="${image.url}">
             </div>
