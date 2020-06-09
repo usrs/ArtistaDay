@@ -1,38 +1,21 @@
-const router = require('express').Router()
-const { Artist, Item, Event, Usercart } = require('../controller')
+const router = require("express").Router()
+const { Image } = require("../models")
+const { join } = require('path')
+
+// router.get("/dashboard/:id", (req, res) => {
+//   Artist.findOne({ id: req.params.id, include: [Image] })
+//     .then((artist) => {
+//       res.render("dashboard", { artist: artist.dataValues })
+//     })
+//     .catch((err) => console.error(err));
+// })
 
 router.get('/', (req, res) => {
-  res.render('index', {
-    startDate: '2020-07-12 00:00:00',
-    endDate: '2020-07-12 11:59:59',
-    title: 'ArtistADay',
-    artistId: 1,
-    discount: 40
-  })
+  res.sendFile(join(__dirname, '../public/index.html'))
 })
 
-router.get('/artists', (req, res) => {
-  Artist.getArtists(artists => {
-    res.render('artists', { artists })
-  })
-})
-
-router.get('/items', (req, res) => {
-  Item.getItems(items => {
-    res.render('items', { items })
-  })
-})
-
-router.get('/events', (req, res) => {
-  Event.getEvents(events => {
-    res.render('events', { events })
-  })
-})
-
-router.get('/usercarts', (req, res) => {
-  Usercart.getUsercarts(usercarts => {
-    res.render('usercarts', { usercarts })
-  })
+router.get('/dashboard', (req, res) => {
+  res.sendFile(join(__dirname, '../public/dashboard.html'))
 })
 
 module.exports = router
