@@ -4,6 +4,8 @@ document.getElementById('addItemForm').addEventListener("submit", function (even
 
   // convert the photo into Base64 format
   const photo = document.querySelector('input[type="file"]')
+  const name = document.getElementById('artworkTitle').value
+  console.log(name)
   // const photo = document.getElementById('imgPath').textContent
   console.log(photo)
   const reader = new FileReader()
@@ -19,25 +21,11 @@ document.getElementById('addItemForm').addEventListener("submit", function (even
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        name: document.getElementById('artworkTitle').value,
         photo: reader.result,
       }),
     })
   }
-  reader.onerror = function (err) {
-    console.log(err);
-  }
-  fetch("/api/images", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: document.getElementById('artworkTitle').value,
-      url: data.link
-    }),
-  })
-}
   reader.onerror = function (err) {
     console.log(err);
   }
