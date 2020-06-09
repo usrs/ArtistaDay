@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HomePage</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ <style>
+  body {
+   text-align: center;
+  }
+
+  #featured {
+   position: relative;
+  }
+
+  #mainImg {
+   max-width: 1000px;
+   max-height: 1000px;
+  }
+
+  #timer {
+   position: absolute;
+   z-index: 1;
+   opacity: 0.5;
+   background-color: gray;
+   bottom: 10px;
+   right: -240px;
+   height: 80px;
+   width: 190px;
+   margin-right: 250px;
+  }
+
+  #nameBox {
+   position: absolute;
+   z-index: 1;
+   opacity: 0.7;
+   background-color: gray;
+   bottom: 10px;
+   left: 30px;
+   height: 100px;
+   width: 300px;
+   margin-right: 250px;
+  }
+
+  #artistName {
+   font-size: 20px;
+  }
+
+  .prodLink {
+   float: cente;
+   font-size: 20px;
+   background-color: aquamarine;
+   padding: 10px;
+  }
+
+  .page-footer {
+   width: 100%;
+   padding-bottom: 5px;
+  }
+ </style>
+</head>
+
+<body>
+ <!-- NavBar -->
+ <nav class="myNav">
+  <div class="parallax-container">
+   <div class="nav-wrapper">
+    <a class="brand-logo left">Artist A Day</a>
+    <ul class="right hide-on-med-and-down">
+     <li><a href="/">home</a></li>
+    </ul>
+   </div>
+ </nav>
+ </div>
+
+ <div class="container">
+  <h2 class="center-align">Upload Artwork</h2>
+  <div class="responsive-img hoverable row" id=""></div>
+   <form action="/imgur" method="post">
+    <input type="text" name="name">
+    <input type="file" name="photo"/>
+    <button type="submit">Submit</button>
+   </form>
+  </div>
+ </div>
+
+ <footer class="page-footer product-footer">
+  <div class="container">
+   <div class="row">
+    © 2020 Copyright ArtistADay
+   </div>
+  </div>
+ </footer>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script src="index.js"></script>
+</body>
+
+</html>
