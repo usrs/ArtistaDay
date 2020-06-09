@@ -11,10 +11,10 @@ const loadCards = () => {
               <img src="${image.url}">
             </div>
             <div class="card-content">
-              <p class="card-image-name">:${image.name}</p>
+              <h6 class="card-image-name">${image.name}</h6>
             </div>
             <div class="card-action">
-                    <a class="waves-effect waves-light btn-small addBtn" a href="/items/${image.id}">Visit image Page</a>
+                    <a class="waves-effect waves-light btn-small addBtn" href="/items/${image.id}">Visit image Page</a>
                   </div>
                 </div>
             </div>
