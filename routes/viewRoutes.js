@@ -3,8 +3,8 @@ const { Image } = require("../models");
 
 router.get("/", (req, res) => {
   Image.findAll()
-  .then(image => {
-    res.render("home", {image: image.dataValues});
+  .then(item => {
+    res.render("home", {item: item.dataValues});
   })
   .catch(err => console.error(err))
 });
