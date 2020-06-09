@@ -11,7 +11,7 @@ Image.init({
   url: {
     type: DataTypes.STRING,
     allowNull: false
-  },
+  }
 }, { sequelize, modelName: 'image' })
 
 module.exports = Image

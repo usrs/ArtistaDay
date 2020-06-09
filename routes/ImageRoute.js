@@ -4,9 +4,9 @@ const { Image } = require("../models");
 // GET all images
 router.get("/images", (req, res) => {
   Image.findAll()
-    .then((image) => res.json(images))
-    .catch((err) => console.error(err));
-});
+    .then((images) => res.json(images))
+    .catch((err) => console.error(err))
+})
 
 // // GET one image
 // router.get("/images/:id", (req, res) => {
@@ -36,4 +36,4 @@ router.delete("/images/:id", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-module.exports = router;
+module.exports = router
