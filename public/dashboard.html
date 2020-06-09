@@ -89,14 +89,18 @@
        <input class="file-path validate" type="text" id="imgPath" name="imgPath">
       </div>
      </div>
-     <p>
-      <label for="awtitle">Artwork Title:</label><br>
-     </p>
-     <input type="text" id="artworkTitle" name="name"><br>
-     <div>
-      <button class="btn waves-effect waves-light" id="upload" type="submit" name="action"
-       action="/imgur" method="POST"><i class="material-icons">Submit Image</i>
+      <div class="row">
+       <div class="input-field col s12">
+        <input id="artworkTitle" type="text" name="name" class="validate">
+        <label for="name">Artwork Name</label>
+       </div>
+     <div class="col-12">
+      <div class="row">
+       <button class="btn waves-effect waves-light" id="upload" type="submit" name="action" action="/imgur" method="POST"><i
+        class="material-icons">Submit Image</i>
       </button><br><br>
+     </div>
+      
      </div>
     </form>
    </div>

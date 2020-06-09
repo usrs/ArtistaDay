@@ -26,14 +26,21 @@ document.getElementById('addItemForm').addEventListener("submit", function (even
   reader.onerror = function (err) {
     console.log(err);
   }
-  axios.post('/api/upload', {
-    name: document.getElementById('artworkTitle').value,
-    url: data.link,
+  fetch("/api/images", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: document.getElementById('artworkTitle').value,
+      url: data.link
+    }),
   })
-    .then(() => {
-      console.log(data.link)
-    })
-    .catch(err => console.error(err))
+}
+  reader.onerror = function (err) {
+    console.log(err);
+  }
 })
 
 // document.getElementById('addImage').addEventListener('click', event => {

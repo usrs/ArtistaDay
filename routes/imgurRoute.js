@@ -5,7 +5,7 @@ router.post('/imgur', (req, res) => {
   const { photo } = req.body
   const base64Photo = photo.split(',')[1]
   imgur.setAPIUrl("https://api.imgur.com/3/");
-  imgur.setClientId("979c7e4e2cd374a");
+  imgur.setClientId(process.env.ClientID);
   console.log(imgur.getClientId())
   imgur.uploadBase64(base64Photo)
     .then(json => {
