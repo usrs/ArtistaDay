@@ -4,7 +4,7 @@ const { Image } = require("../models");
 // GET all images
 router.get("/images", (req, res) => {
   Image.findAll()
-    .then((images) => res.json(images))
+    .then((image) => res.json(images))
     .catch((err) => console.error(err));
 });
 

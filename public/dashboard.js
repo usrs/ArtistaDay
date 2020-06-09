@@ -39,8 +39,6 @@ document.getElementById('addImage').addEventListener('click', event => {
       imageElem.textContent = `Name: ${document.getElementById('name').value}<br><img src="" alt="">`
       document.getElementById('images').append(imageElem)
       document.getElementById('name').value = ''
-      document.getElementById('breed').value = ''
-      document.getElementById('age').value = ''
     })
     .catch(err => console.error(err))
 })
