@@ -1,0 +1,6 @@
+<ul id="images">
+  {{#each image.name}}
+  <li>Name: {{this.dataValues.name}}</li>
+  <img src="{{this.dataValues.url}}" alt="">
+  {{/each}}
+</ul>

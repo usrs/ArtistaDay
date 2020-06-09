@@ -1,9 +1,7 @@
 const router = require('express').Router()
 
-router.use('/api', require('./artistRoutes.js'))
-router.use('/api', require('./itemRoutes.js'))
-router.use('/api', require('./imgurUpload.js'))
-
+router.use('/api', require('./imgurRoute.js'))
+router.use("/api", require("./imageRoute.js"));
 router.use(require('./viewRoutes.js'))
 
 module.exports = router

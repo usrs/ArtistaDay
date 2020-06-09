@@ -1,7 +1,6 @@
-const Artist = require('./Artist.js')
-const Item = require('./Item.js')
+const Image = require('./Image.js')
 
-Artist.hasMany(Item)
-Item.belongsTo(Artist)
+// User.hasMany(Image)
+// Image.belongsTo(User)
 
-module.exports = { Artist, Item }
+module.exports = { Image }
