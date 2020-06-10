@@ -11,7 +11,7 @@ router.post('/imgur', (req, res) => {
     .then(json => {
       console.log(json.data.link)
       link = json.data.link
-      res.json(link)
+      res.json({link})
     })
   // our file will be printed to the terminal here
   // res.end()

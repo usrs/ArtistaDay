@@ -1,6 +1,6 @@
-import { response } from "express"
+console.log('something')
 
-document.getElementById('addItemForm').addEventListener("submit", function (event) {
+document.getElementById('addItemForm').addEventListener("click", function (event) {
   // prevent browser from refeshing the page
   event.preventDefault()
 
@@ -27,28 +27,37 @@ document.getElementById('addItemForm').addEventListener("submit", function (even
       }),
     }).then(response => response.json())
       .then(data => {
-        imgurCallback(data)
+        console.log(data)
+        console.log(JSON.stringify({
+          name: document.getElementById('artworkTitle').value,
+          url: data.link
+        }))
+        fetch("/api/images", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: document.getElementById('artworkTitle').value,
+            url: data.link
+          }),
+        }).catch(err => {
+          console.log(err.message)
+        })
       })
   }
-  console.log(link, name)
-  fetch("/api/images", {
-    method: "POST",
-    body: JSON.stringify({
-      name: document.getElementById('artworkTitle').value,
-      url: link
-    }),
-  }).catch(err => {
-    console.log(err.message)
-  })
+  // console.log(link, name)
+  
 
-  reader.onerror = function (err) {
-    console.log(err);
-  }
+  // reader.onerror = function (err) {
+  //   console.log(err);
+  // }
 })
-function imgurCallback(data, callback) {
-  link = data
-  callback(response)
-}
+// function imgurCallback(data, callback) {
+//   link = data
+//   callback(response)
+// }
 // document.getElementById('addImage').addEventListener('click', event => {
 //   event.preventDefault()
 

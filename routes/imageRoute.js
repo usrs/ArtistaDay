@@ -17,6 +17,7 @@ router.get("/images", (req, res) => {
 
 // POST one image
 router.post("/images", (req, res) => {
+  console.log(req.body)
   Image.create(req.body)
     .then(() => res.sendStatus(200))
     .catch((err) => console.error(err));
