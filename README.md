@@ -1,6 +1,7 @@
 # ArtistaDay
 ------------------------------------------------------
-
+![Artist Gallery](./artists.png?raw=true "Artist Gallery")
+--------------------------------------------------------
 # Problem
 --------------------------------------------------------
 For Fine Art artists, the transition to online commerce has been difficult. Creating an e-commerce website is expensive and time-consuming while having artwork featured on a website like Etsy or Amazon results in being one of thousands of artists. This makes it difficult for artists to stand out and for buyers to notice the work of any individual artist. For consumers, this can make finding unique art online overwhelming and time-consuming.
