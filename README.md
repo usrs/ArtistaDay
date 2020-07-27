@@ -2,7 +2,7 @@
 ------------------------------------------------------
 ![Artist Gallery](./artists.png?raw=true "Artist Gallery")
 --------------------------------------------------------
-#Link to Live App: https://hidden-inlet-64215.herokuapp.com/
+Link to Live App: https://hidden-inlet-64215.herokuapp.com/
 ______________________________________________________________
 # Problem
 --------------------------------------------------------
