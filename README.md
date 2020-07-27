@@ -12,3 +12,14 @@ For Fine Art artists, the transition to online commerce has been difficult. Crea
 ----------------------------------------------------------------
 ArtistADay provides a curated fine art shopping experience by featuring one independent artist a day in a timed sales event.
 This enables independent artists to gain more exposure while providing consumers with an easy to way to find unique art and support independent artists at an affordable price.
+
+# Instructions
+------------------------------------------------------------
+1. On the homepage, click on "Dashboard". 
+2. Once in the dashboard, click on the green FILE button and choose the image you want to upload. (This uploads it to the imgur API as well as the artist gallery). 
+3. Give the image a name and then click SUBMIT.
+4. Click on "home" in the navbar to see your uploaded artwork in the Artist Gallery.
+
+# Technologies Used
+----------------------------------------------------------
+Node, Express, MySQL, Sequelize, imgur API
